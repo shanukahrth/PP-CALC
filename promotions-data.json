@@ -2710,11 +2710,11 @@
           "size": null,
           "soh": null,
           "costOverride": 27461,
-          "mrp": null,
-          "exDisc": null,
-          "sugMrp": null,
-          "sugDisc": null,
-          "remarks": "",
+          "mrp": 64999,
+          "exDisc": 10000,
+          "sugMrp": 64999,
+          "sugDisc": 10000,
+          "remarks": "New SKU",
           "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
@@ -2728,11 +2728,11 @@
           "size": null,
           "soh": null,
           "costOverride": 80552,
-          "mrp": null,
-          "exDisc": null,
-          "sugMrp": null,
-          "sugDisc": null,
-          "remarks": "",
+          "mrp": 159999,
+          "exDisc": 20000,
+          "sugMrp": 159999,
+          "sugDisc": 20000,
+          "remarks": "New SKU",
           "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
@@ -2743,5 +2743,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-07T08:23:34.303Z"
+  "updatedAt": "2026-09-07T08:25:46.274Z"
 }
