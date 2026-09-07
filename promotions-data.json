@@ -2607,7 +2607,7 @@
           "sugMrp": 69499,
           "sugDisc": 26062.125,
           "remarks": "EOL",
-          "wPrice": 39093.3,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2625,7 +2625,7 @@
           "sugMrp": 79999,
           "sugDisc": 19999.75,
           "remarks": "EOL",
-          "wPrice": 53999.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2638,10 +2638,10 @@
           "size": null,
           "soh": 45,
           "costOverride": null,
-          "mrp": null,
-          "exDisc": null,
-          "sugMrp": null,
-          "sugDisc": null,
+          "mrp": 164999,
+          "exDisc": 57749.65,
+          "sugMrp": 164999,
+          "sugDisc": 57749.65,
           "remarks": "EOL",
           "wPrice": null,
           "freeIssue": "",
@@ -2707,5 +2707,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-07T08:13:49.430Z"
+  "updatedAt": "2026-09-07T08:15:06.424Z"
 }
