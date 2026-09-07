@@ -1889,11 +1889,11 @@
           "soh": null,
           "costOverride": null,
           "mrp": 40490,
-          "exDisc": 0,
+          "exDisc": 9590,
           "sugMrp": 40490,
-          "sugDisc": 0,
-          "remarks": "",
-          "wPrice": 32288,
+          "sugDisc": 9590,
+          "remarks": "EOL – Current Stock Being Depleted",
+          "wPrice": 27810,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2701,5 +2701,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-07T08:02:05.576Z"
+  "updatedAt": "2026-09-07T08:05:44.070Z"
 }
