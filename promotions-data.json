@@ -402,9 +402,9 @@
         },
         {
           "id": 1000002,
-          "code": "",
+          "code": "SLE32E6A",
           "size": null,
-          "soh": null,
+          "soh": 9303,
           "costOverride": null,
           "mrp": null,
           "exDisc": null,
@@ -2683,5 +2683,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-07T06:55:28.046Z"
+  "updatedAt": "2026-09-07T07:09:49.322Z"
 }
