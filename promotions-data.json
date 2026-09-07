@@ -1976,7 +1976,7 @@
           "exDisc": 50000,
           "sugMrp": 339999,
           "sugDisc": 50000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": 260999.1,
           "freeIssue": "",
           "vat": "Y",
@@ -1994,7 +1994,7 @@
           "exDisc": 50000,
           "sugMrp": 399999,
           "sugDisc": 50000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": 314999.10000000003,
           "freeIssue": "",
           "vat": "Y",
@@ -2012,7 +2012,7 @@
           "exDisc": 70000,
           "sugMrp": 449999,
           "sugDisc": 70000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": 341999.10000000003,
           "freeIssue": "",
           "vat": "Y",
@@ -2030,7 +2030,7 @@
           "exDisc": 40000,
           "sugMrp": 499999,
           "sugDisc": 40000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": 413999.10000000003,
           "freeIssue": "",
           "vat": "Y",
@@ -2048,31 +2048,13 @@
           "exDisc": 70000,
           "sugMrp": 619999,
           "sugDisc": 70000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": 494999.10000000003,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
           "_sl": 111
-        },
-        {
-          "id": 111,
-          "code": "IFPSTANDAU",
-          "size": null,
-          "soh": null,
-          "costOverride": null,
-          "mrp": 54999,
-          "exDisc": null,
-          "sugMrp": 54999,
-          "sugDisc": null,
-          "remarks": "",
-          "wPrice": 49499.1,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 112
         },
         {
           "id": 112,
@@ -2090,7 +2072,97 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
+          "_sl": 112
+        },
+        {
+          "id": 1000005,
+          "code": "SLE-55IFPZB-16",
+          "size": null,
+          "soh": 137,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
           "_sl": 113
+        },
+        {
+          "id": 1000006,
+          "code": "SLE-65IFPZB-16",
+          "size": null,
+          "soh": 190,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 114
+        },
+        {
+          "id": 1000007,
+          "code": "SLE-65IFPZB-16-WCAM",
+          "size": null,
+          "soh": 22,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 115
+        },
+        {
+          "id": 1000008,
+          "code": "SLE-75IFPZB-16",
+          "size": null,
+          "soh": 55,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 116
+        },
+        {
+          "id": 1000009,
+          "code": "SLE-85IFPZB-16",
+          "size": null,
+          "soh": 40,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 117
         }
       ]
     },
@@ -2114,7 +2186,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 114
+          "_sl": 118
         },
         {
           "id": 114,
@@ -2132,7 +2204,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 115
+          "_sl": 119
         },
         {
           "id": 115,
@@ -2150,7 +2222,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 116
+          "_sl": 120
         },
         {
           "id": 116,
@@ -2168,7 +2240,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 117
+          "_sl": 121
         },
         {
           "id": 117,
@@ -2186,7 +2258,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 118
+          "_sl": 122
         },
         {
           "id": 118,
@@ -2204,7 +2276,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 119
+          "_sl": 123
         },
         {
           "id": 119,
@@ -2222,7 +2294,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 120
+          "_sl": 124
         },
         {
           "id": 120,
@@ -2240,7 +2312,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 121
+          "_sl": 125
         },
         {
           "id": 121,
@@ -2258,7 +2330,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 122
+          "_sl": 126
         },
         {
           "id": 122,
@@ -2276,7 +2348,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 123
+          "_sl": 127
         },
         {
           "id": 123,
@@ -2294,7 +2366,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 124
+          "_sl": 128
         },
         {
           "id": 124,
@@ -2312,7 +2384,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 125
+          "_sl": 129
         },
         {
           "id": 125,
@@ -2330,7 +2402,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 126
+          "_sl": 130
         },
         {
           "id": 126,
@@ -2348,7 +2420,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 127
+          "_sl": 131
         },
         {
           "id": 127,
@@ -2366,7 +2438,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 128
+          "_sl": 132
         },
         {
           "id": 128,
@@ -2384,7 +2456,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 129
+          "_sl": 133
         },
         {
           "id": 129,
@@ -2402,7 +2474,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 130
+          "_sl": 134
         },
         {
           "id": 130,
@@ -2420,7 +2492,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 131
+          "_sl": 135
         },
         {
           "id": 131,
@@ -2438,7 +2510,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 132
+          "_sl": 136
         },
         {
           "id": 132,
@@ -2456,7 +2528,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 133
+          "_sl": 137
         },
         {
           "id": 133,
@@ -2474,7 +2546,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 134
+          "_sl": 138
         },
         {
           "id": 134,
@@ -2492,7 +2564,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 135
+          "_sl": 139
         },
         {
           "id": 135,
@@ -2510,7 +2582,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 136
+          "_sl": 140
         },
         {
           "id": 136,
@@ -2528,7 +2600,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 137
+          "_sl": 141
         },
         {
           "id": 137,
@@ -2546,7 +2618,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 138
+          "_sl": 142
         },
         {
           "id": 138,
@@ -2564,7 +2636,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 139
+          "_sl": 143
         },
         {
           "id": 139,
@@ -2582,43 +2654,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 140
-        },
-        {
-          "id": 140,
-          "code": "SLE-65IFPZB-16-WCAM",
-          "size": null,
-          "soh": null,
-          "costOverride": null,
-          "mrp": 449999,
-          "exDisc": 50000,
-          "sugMrp": 449999,
-          "sugDisc": 50000,
-          "remarks": "",
-          "wPrice": 359999.10000000003,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 141
-        },
-        {
-          "id": 141,
-          "code": "SLE-75IFPZB-16",
-          "size": null,
-          "soh": null,
-          "costOverride": null,
-          "mrp": 519999,
-          "exDisc": 30000,
-          "sugMrp": 519999,
-          "sugDisc": 30000,
-          "remarks": "",
-          "wPrice": 440999.10000000003,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 142
+          "_sl": 144
         },
         {
           "id": 142,
@@ -2636,7 +2672,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 143
+          "_sl": 145
         }
       ]
     },
@@ -2660,10 +2696,10 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 144
+          "_sl": 146
         }
       ]
     }
   ],
-  "updatedAt": "2026-09-07T07:11:45.152Z"
+  "updatedAt": "2026-09-07T07:23:57.083Z"
 }
