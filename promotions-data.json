@@ -2547,24 +2547,6 @@
           "supportRetail": 0,
           "supportWholesale": 0,
           "_sl": 138
-        },
-        {
-          "id": 142,
-          "code": "SLE-85IFPZB-16",
-          "size": null,
-          "soh": null,
-          "costOverride": null,
-          "mrp": 619999,
-          "exDisc": 50000,
-          "sugMrp": 619999,
-          "sugDisc": 50000,
-          "remarks": "",
-          "wPrice": 512999.10000000003,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 139
         }
       ]
     },
@@ -2588,7 +2570,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 140
+          "_sl": 139
         }
       ]
     },
@@ -2612,7 +2594,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 141
+          "_sl": 140
         },
         {
           "id": 1000011,
@@ -2630,7 +2612,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 142
+          "_sl": 141
         },
         {
           "id": 1000012,
@@ -2648,7 +2630,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 143
+          "_sl": 142
         },
         {
           "id": 1000013,
@@ -2666,7 +2648,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 144
+          "_sl": 143
         },
         {
           "id": 1000014,
@@ -2684,7 +2666,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 145
+          "_sl": 144
         },
         {
           "id": 1000015,
@@ -2702,7 +2684,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 146
+          "_sl": 145
         },
         {
           "id": 1000016,
@@ -2720,7 +2702,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 147
+          "_sl": 146
         },
         {
           "id": 1000017,
@@ -2738,10 +2720,10 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 148
+          "_sl": 147
         }
       ]
     }
   ],
-  "updatedAt": "2026-09-07T08:27:47.035Z"
+  "updatedAt": "2026-09-07T08:28:05.840Z"
 }
