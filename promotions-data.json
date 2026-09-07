@@ -413,10 +413,10 @@
           "soh": null,
           "costOverride": null,
           "mrp": 219999,
-          "exDisc": 40000,
+          "exDisc": 60000,
           "sugMrp": 219999,
-          "sugDisc": 40000,
-          "remarks": "Free Sound Bar - SIN-SB-390",
+          "sugDisc": 60000,
+          "remarks": "EOL",
           "wPrice": 161999.1,
           "freeIssue": "",
           "vat": "Y",
@@ -2725,5 +2725,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-07T08:28:05.840Z"
+  "updatedAt": "2026-09-07T08:30:17.774Z"
 }
