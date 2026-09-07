@@ -594,7 +594,7 @@
         },
         {
           "id": 33,
-          "code": "PN-TH-32M402N",
+          "code": "",
           "size": null,
           "soh": 563,
           "costOverride": null,
@@ -612,7 +612,7 @@
         },
         {
           "id": 34,
-          "code": "PN-TH-32MS670N",
+          "code": "",
           "size": null,
           "soh": 118,
           "costOverride": null,
@@ -630,7 +630,7 @@
         },
         {
           "id": 35,
-          "code": "PN-TH-43MS670N",
+          "code": "",
           "size": null,
           "soh": 309,
           "costOverride": null,
@@ -648,7 +648,7 @@
         },
         {
           "id": 36,
-          "code": "PN-TH-55MX740N",
+          "code": "",
           "size": 86,
           "soh": 127,
           "costOverride": null,
@@ -666,7 +666,7 @@
         },
         {
           "id": 37,
-          "code": "PN-TH-65MX740N",
+          "code": "",
           "size": 87,
           "soh": 63,
           "costOverride": null,
@@ -684,7 +684,7 @@
         },
         {
           "id": 38,
-          "code": "PN-TH-75MX740N",
+          "code": "",
           "size": 88,
           "soh": 1,
           "costOverride": null,
@@ -2699,7 +2699,121 @@
           "_sl": 146
         }
       ]
+    },
+    {
+      "id": 1002,
+      "name": "PANASONIC ",
+      "rows": [
+        {
+          "id": 1000010,
+          "code": "PN-TH-32M402N",
+          "size": null,
+          "soh": 132,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 147
+        },
+        {
+          "id": 1000011,
+          "code": "PN-TH-32MS670N",
+          "size": null,
+          "soh": 75,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 148
+        },
+        {
+          "id": 1000012,
+          "code": "PN-TH-43MS670N",
+          "size": null,
+          "soh": 45,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 149
+        },
+        {
+          "id": 1000013,
+          "code": "PN-TH-55MX740N",
+          "size": null,
+          "soh": 89,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 150
+        },
+        {
+          "id": 1000014,
+          "code": "PN-TH-65MX740N",
+          "size": null,
+          "soh": 50,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 151
+        },
+        {
+          "id": 1000015,
+          "code": "PN-TH-75MX740N",
+          "size": null,
+          "soh": 3,
+          "costOverride": null,
+          "mrp": null,
+          "exDisc": null,
+          "sugMrp": null,
+          "sugDisc": null,
+          "remarks": "",
+          "wPrice": null,
+          "freeIssue": "",
+          "vat": "Y",
+          "supportRetail": 0,
+          "supportWholesale": 0,
+          "_sl": 152
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-09-07T08:06:55.763Z"
+  "updatedAt": "2026-09-07T08:09:25.924Z"
 }
