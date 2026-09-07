@@ -2062,12 +2062,12 @@
           "size": null,
           "soh": null,
           "costOverride": null,
-          "mrp": 49999,
+          "mrp": 54999,
           "exDisc": null,
-          "sugMrp": 49999,
+          "sugMrp": 54999,
           "sugDisc": null,
-          "remarks": "",
-          "wPrice": 44999.1,
+          "remarks": "Price has not changed ",
+          "wPrice": 49499.1,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2701,5 +2701,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-07T07:23:57.083Z"
+  "updatedAt": "2026-09-07T07:57:33.735Z"
 }
