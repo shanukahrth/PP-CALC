@@ -2194,12 +2194,12 @@
           "size": null,
           "soh": 22,
           "costOverride": null,
-          "mrp": 199999,
-          "exDisc": 750000,
-          "sugMrp": 199999,
-          "sugDisc": 160001,
-          "remarks": "",
-          "wPrice": null,
+          "mrp": 99999,
+          "exDisc": null,
+          "sugMrp": 99999,
+          "sugDisc": 50000,
+          "remarks": "EOL",
+          "wPrice": 44999.1,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2213,11 +2213,11 @@
           "soh": 36,
           "costOverride": null,
           "mrp": 339999,
-          "exDisc": 100000,
+          "exDisc": null,
           "sugMrp": 339999,
-          "sugDisc": 130000,
-          "remarks": "",
-          "wPrice": null,
+          "sugDisc": 150000,
+          "remarks": "EOL",
+          "wPrice": 170999.1,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2333,17 +2333,17 @@
           "_sl": 126
         },
         {
-          "id": 135,
-          "code": "ULED32D5000",
+          "id": 136,
+          "code": "ULED43S550",
           "size": null,
-          "soh": 73,
+          "soh": 65,
           "costOverride": null,
-          "mrp": 69999,
-          "exDisc": 25000,
-          "sugMrp": 69999,
+          "mrp": 79999,
+          "exDisc": null,
+          "sugMrp": 79999,
           "sugDisc": 30000,
-          "remarks": "",
-          "wPrice": null,
+          "remarks": "EOL",
+          "wPrice": 44999.1,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2351,76 +2351,22 @@
           "_sl": 127
         },
         {
-          "id": 136,
-          "code": "ULED43S550",
-          "size": null,
-          "soh": 65,
-          "costOverride": null,
-          "mrp": 159999,
-          "exDisc": 75000,
-          "sugMrp": 159999,
-          "sugDisc": 75000,
-          "remarks": "",
-          "wPrice": null,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 128
-        },
-        {
-          "id": 137,
-          "code": "SLE55H4E-DP",
-          "size": null,
-          "soh": 69,
-          "costOverride": null,
-          "mrp": 229999,
-          "exDisc": 50000,
-          "sugMrp": 229999,
-          "sugDisc": 80000,
-          "remarks": "",
-          "wPrice": null,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 129
-        },
-        {
-          "id": 138,
-          "code": "SLE55G22N",
-          "size": null,
-          "soh": 47,
-          "costOverride": null,
-          "mrp": 229999,
-          "exDisc": 55000,
-          "sugMrp": 229999,
-          "sugDisc": 85000,
-          "remarks": "",
-          "wPrice": null,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 130
-        },
-        {
           "id": 139,
           "code": "SLE32D2010TC",
           "size": null,
           "soh": 127,
           "costOverride": null,
-          "mrp": 69999,
+          "mrp": 27999,
           "exDisc": null,
-          "sugMrp": 69999,
-          "sugDisc": 30000,
-          "remarks": "",
-          "wPrice": null,
+          "sugMrp": 27999,
+          "sugDisc": 3000,
+          "remarks": "EOL",
+          "wPrice": 22499.1,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 131
+          "_sl": 128
         }
       ]
     },
@@ -2444,7 +2390,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 132
+          "_sl": 129
         }
       ]
     },
@@ -2468,7 +2414,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 133
+          "_sl": 130
         },
         {
           "id": 1000011,
@@ -2486,7 +2432,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 134
+          "_sl": 131
         },
         {
           "id": 1000012,
@@ -2504,7 +2450,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 135
+          "_sl": 132
         },
         {
           "id": 1000013,
@@ -2522,7 +2468,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 136
+          "_sl": 133
         },
         {
           "id": 1000014,
@@ -2540,7 +2486,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 137
+          "_sl": 134
         },
         {
           "id": 1000015,
@@ -2558,7 +2504,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 138
+          "_sl": 135
         },
         {
           "id": 1000016,
@@ -2576,7 +2522,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 139
+          "_sl": 136
         },
         {
           "id": 1000017,
@@ -2594,10 +2540,10 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 140
+          "_sl": 137
         }
       ]
     }
   ],
-  "updatedAt": "2026-09-08T04:16:46.182Z"
+  "updatedAt": "2026-09-08T04:20:31.034Z"
 }
