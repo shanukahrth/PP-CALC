@@ -245,10 +245,10 @@
           "soh": null,
           "costOverride": null,
           "mrp": 209999,
-          "exDisc": 30000,
+          "exDisc": 20000,
           "sugMrp": 209999,
           "sugDisc": 20000,
-          "remarks": "",
+          "remarks": "New SKU - Price has not changed ",
           "wPrice": 170999.1,
           "freeIssue": "",
           "vat": "Y",
@@ -2599,5 +2599,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-08T04:05:10.316Z"
+  "updatedAt": "2026-09-08T04:06:41.424Z"
 }
