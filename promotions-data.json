@@ -716,7 +716,7 @@
           "exDisc": 50000,
           "sugMrp": 319999,
           "sugDisc": 60000,
-          "remarks": "Price not changed",
+          "remarks": "Discontinued. Only Display units are avaliable. ",
           "wPrice": 242999.1,
           "freeIssue": "",
           "vat": "Y",
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T09:14:51.006Z"
+  "updatedAt": "2026-09-09T09:18:25.098Z"
 }
