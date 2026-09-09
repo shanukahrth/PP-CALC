@@ -1377,8 +1377,8 @@
           "code": "SIN-BTS-D1228A",
           "size": null,
           "soh": null,
-          "costOverride": null,
-          "mrp": 84999,
+          "costOverride": 40126.1402,
+          "mrp": 89999,
           "exDisc": 10000,
           "sugMrp": 89999,
           "sugDisc": 10000,
@@ -2545,5 +2545,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:41:08.335Z"
+  "updatedAt": "2026-09-09T13:41:23.595Z"
 }
