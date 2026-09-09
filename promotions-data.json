@@ -951,7 +951,7 @@
           "code": "SMGUA32H5000",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 54734.9378,
           "mrp": 74999,
           "exDisc": 10000,
           "sugMrp": 74999,
@@ -969,7 +969,7 @@
           "code": "SMGUA43F6000",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 89387.329,
           "mrp": 149999,
           "exDisc": 20000,
           "sugMrp": 149999,
@@ -987,7 +987,7 @@
           "code": "SMGQA85QN950F",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 1567758.35,
           "mrp": 2799999,
           "exDisc": 300000,
           "sugMrp": 2799999,
@@ -1005,7 +1005,7 @@
           "code": "SMGUA55U8000H",
           "size": null,
           "soh": 752,
-          "costOverride": null,
+          "costOverride": 197408.2212,
           "mrp": 354999,
           "exDisc": 30000,
           "sugMrp": 354999,
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:30:46.396Z"
+  "updatedAt": "2026-09-09T13:31:37.138Z"
 }
