@@ -51,7 +51,7 @@
           "sugMrp": 124999,
           "sugDisc": 20000,
           "remarks": "EOL",
-          "wPrice": 94499.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T14:04:07.504Z"
+  "updatedAt": "2026-09-09T14:05:04.702Z"
 }
