@@ -1023,7 +1023,7 @@
           "code": "SMGUA65U8000H",
           "size": null,
           "soh": 121,
-          "costOverride": null,
+          "costOverride": 252511.4091,
           "mrp": 464999,
           "exDisc": 40000,
           "sugMrp": 464999,
@@ -1041,7 +1041,7 @@
           "code": "SMGUA75M70HARXSG",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 0,
           "mrp": 689999,
           "exDisc": 50000,
           "sugMrp": 689999,
@@ -1059,7 +1059,7 @@
           "code": "SMGUA85M70HARXSG",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 0,
           "mrp": 899999,
           "exDisc": 60000,
           "sugMrp": 899999,
@@ -1077,7 +1077,7 @@
           "code": "SMGQA65LS03HE",
           "size": null,
           "soh": 6,
-          "costOverride": null,
+          "costOverride": 598090.56,
           "mrp": 1099999,
           "exDisc": 100000,
           "sugMrp": 1099999,
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:31:37.138Z"
+  "updatedAt": "2026-09-09T13:31:45.940Z"
 }
