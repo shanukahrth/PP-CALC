@@ -1491,9 +1491,9 @@
           "code": "HFPA-GRAVITY-BLU",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 15261.2583,
           "mrp": 26990,
-          "exDisc": 0,
+          "exDisc": 2000,
           "sugMrp": 26990,
           "sugDisc": 0,
           "remarks": "",
@@ -2527,5 +2527,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:46:55.012Z"
+  "updatedAt": "2026-09-09T13:46:59.564Z"
 }
