@@ -1343,7 +1343,7 @@
           "soh": null,
           "costOverride": 3183.313,
           "mrp": 6899,
-          "exDisc": 2000,
+          "exDisc": 2500,
           "sugMrp": 7399,
           "sugDisc": 2000,
           "remarks": "Over 6 Months",
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:33:49.051Z"
+  "updatedAt": "2026-09-09T13:33:57.572Z"
 }
