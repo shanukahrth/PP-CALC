@@ -1002,9 +1002,9 @@
         },
         {
           "id": 65,
-          "code": "SMGUA65U8500",
+          "code": "SMGUA65U8000H",
           "size": null,
-          "soh": null,
+          "soh": 121,
           "costOverride": null,
           "mrp": 459999,
           "exDisc": 50000,
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T11:04:02.022Z"
+  "updatedAt": "2026-09-09T11:16:34.900Z"
 }
