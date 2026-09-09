@@ -31,9 +31,9 @@
           "mrp": 59999,
           "exDisc": 16000,
           "sugMrp": 59999,
-          "sugDisc": 16000,
+          "sugDisc": 20000,
           "remarks": "Price has not changed ",
-          "wPrice": 39599.1,
+          "wPrice": 35999.1,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T09:44:23.627Z"
+  "updatedAt": "2026-09-09T10:47:51.661Z"
 }
