@@ -1413,7 +1413,7 @@
           "code": "SIN-PSY618",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 30240.7131,
           "mrp": 54999,
           "exDisc": 10000,
           "sugMrp": 54999,
@@ -2545,5 +2545,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:44:23.982Z"
+  "updatedAt": "2026-09-09T13:44:58.550Z"
 }
