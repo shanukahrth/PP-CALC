@@ -1041,7 +1041,7 @@
           "code": "SMGUA75M70HARXSG",
           "size": null,
           "soh": null,
-          "costOverride": 0,
+          "costOverride": 387432,
           "mrp": 689999,
           "exDisc": 50000,
           "sugMrp": 689999,
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:31:45.940Z"
+  "updatedAt": "2026-09-09T13:32:00.484Z"
 }
