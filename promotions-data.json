@@ -1382,7 +1382,7 @@
           "exDisc": 10000,
           "sugMrp": 89999,
           "sugDisc": 10000,
-          "remarks": "Price Increased.",
+          "remarks": "",
           "wPrice": 63999,
           "freeIssue": "",
           "vat": "Y",
@@ -2545,5 +2545,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:41:36.300Z"
+  "updatedAt": "2026-09-09T13:43:44.836Z"
 }
