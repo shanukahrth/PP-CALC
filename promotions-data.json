@@ -152,7 +152,7 @@
           "id": 16,
           "code": "SLE65G3EN",
           "size": 55,
-          "soh": 240,
+          "soh": 250,
           "costOverride": null,
           "mrp": 259999,
           "exDisc": 40000,
@@ -1779,7 +1779,7 @@
           "sugMrp": 339999,
           "sugDisc": 50000,
           "remarks": "EOL",
-          "wPrice": 260999.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1797,7 +1797,7 @@
           "sugMrp": 399999,
           "sugDisc": 50000,
           "remarks": "EOL",
-          "wPrice": 314999.10000000003,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1815,7 +1815,7 @@
           "sugMrp": 449999,
           "sugDisc": 70000,
           "remarks": "EOL",
-          "wPrice": 341999.10000000003,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1833,7 +1833,7 @@
           "sugMrp": 499999,
           "sugDisc": 40000,
           "remarks": "EOL",
-          "wPrice": 413999.10000000003,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1851,7 +1851,7 @@
           "sugMrp": 619999,
           "sugDisc": 70000,
           "remarks": "EOL",
-          "wPrice": 494999.10000000003,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T10:47:51.661Z"
+  "updatedAt": "2026-09-09T11:04:02.022Z"
 }
