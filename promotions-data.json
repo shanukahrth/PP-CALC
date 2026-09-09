@@ -1344,7 +1344,7 @@
           "costOverride": 3183.313,
           "mrp": 6899,
           "exDisc": 1500,
-          "sugMrp": 7399,
+          "sugMrp": 6899,
           "sugDisc": 1500,
           "remarks": "Over 6 Months",
           "wPrice": 4589,
@@ -2545,5 +2545,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:39:17.480Z"
+  "updatedAt": "2026-09-09T13:39:32.153Z"
 }
