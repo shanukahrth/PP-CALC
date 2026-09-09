@@ -1431,7 +1431,7 @@
           "code": "SIN-PSVX938N",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 17319.9137,
           "mrp": 29999,
           "exDisc": 5000,
           "sugMrp": 29999,
@@ -2545,5 +2545,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:44:58.550Z"
+  "updatedAt": "2026-09-09T13:45:25.204Z"
 }
