@@ -1324,7 +1324,7 @@
           "size": null,
           "soh": null,
           "costOverride": 2744.7867,
-          "mrp": 6799,
+          "mrp": 5699,
           "exDisc": 1400,
           "sugMrp": 5699,
           "sugDisc": 1000,
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:32:44.802Z"
+  "updatedAt": "2026-09-09T13:33:35.184Z"
 }
