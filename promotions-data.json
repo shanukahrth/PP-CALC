@@ -1345,7 +1345,7 @@
           "mrp": 6899,
           "exDisc": 2500,
           "sugMrp": 7399,
-          "sugDisc": 2000,
+          "sugDisc": 2500,
           "remarks": "Over 6 Months",
           "wPrice": 4859.1,
           "freeIssue": "",
@@ -2581,5 +2581,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:33:57.572Z"
+  "updatedAt": "2026-09-09T13:34:01.099Z"
 }
