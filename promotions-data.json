@@ -1505,24 +1505,6 @@
           "_sl": 81
         },
         {
-          "id": 97,
-          "code": "HFPA-EVENTM-BLC",
-          "size": null,
-          "soh": null,
-          "costOverride": null,
-          "mrp": null,
-          "exDisc": 0,
-          "sugMrp": null,
-          "sugDisc": 0,
-          "remarks": "",
-          "wPrice": null,
-          "freeIssue": "",
-          "vat": "Y",
-          "supportRetail": 0,
-          "supportWholesale": 0,
-          "_sl": 82
-        },
-        {
           "id": 98,
           "code": "HFPA-MUSICBOX100-BLK/SIL",
           "size": null,
@@ -1538,7 +1520,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 83
+          "_sl": 82
         },
         {
           "id": 99,
@@ -1556,7 +1538,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 84
+          "_sl": 83
         },
         {
           "id": 100,
@@ -1574,7 +1556,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 85
+          "_sl": 84
         },
         {
           "id": 101,
@@ -1592,7 +1574,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 86
+          "_sl": 85
         },
         {
           "id": 102,
@@ -1610,7 +1592,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 87
+          "_sl": 86
         }
       ]
     },
@@ -1634,7 +1616,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 88
+          "_sl": 87
         },
         {
           "id": 104,
@@ -1652,7 +1634,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 89
+          "_sl": 88
         },
         {
           "id": 105,
@@ -1670,7 +1652,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 90
+          "_sl": 89
         }
       ]
     },
@@ -1694,7 +1676,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 91
+          "_sl": 90
         },
         {
           "id": 107,
@@ -1712,7 +1694,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 92
+          "_sl": 91
         },
         {
           "id": 108,
@@ -1730,7 +1712,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 93
+          "_sl": 92
         },
         {
           "id": 109,
@@ -1748,7 +1730,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 94
+          "_sl": 93
         },
         {
           "id": 110,
@@ -1766,7 +1748,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 95
+          "_sl": 94
         },
         {
           "id": 112,
@@ -1784,7 +1766,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 96
+          "_sl": 95
         },
         {
           "id": 1000005,
@@ -1802,7 +1784,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 97
+          "_sl": 96
         },
         {
           "id": 1000006,
@@ -1820,7 +1802,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 98
+          "_sl": 97
         },
         {
           "id": 1000007,
@@ -1838,7 +1820,7 @@
           "vat": "Y",
           "supportRetail": null,
           "supportWholesale": 0,
-          "_sl": 99
+          "_sl": 98
         },
         {
           "id": 1000008,
@@ -1856,7 +1838,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 100
+          "_sl": 99
         },
         {
           "id": 1000009,
@@ -1874,7 +1856,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 101
+          "_sl": 100
         }
       ]
     },
@@ -1898,7 +1880,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 102
+          "_sl": 101
         },
         {
           "id": 114,
@@ -1916,7 +1898,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 103
+          "_sl": 102
         },
         {
           "id": 115,
@@ -1934,7 +1916,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 104
+          "_sl": 103
         },
         {
           "id": 116,
@@ -1952,7 +1934,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 105
+          "_sl": 104
         },
         {
           "id": 117,
@@ -1970,7 +1952,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 106
+          "_sl": 105
         },
         {
           "id": 118,
@@ -1988,7 +1970,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 107
+          "_sl": 106
         },
         {
           "id": 119,
@@ -2006,7 +1988,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 108
+          "_sl": 107
         },
         {
           "id": 120,
@@ -2024,7 +2006,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 109
+          "_sl": 108
         },
         {
           "id": 121,
@@ -2042,7 +2024,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 110
+          "_sl": 109
         },
         {
           "id": 122,
@@ -2060,7 +2042,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 111
+          "_sl": 110
         },
         {
           "id": 123,
@@ -2078,7 +2060,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 112
+          "_sl": 111
         },
         {
           "id": 124,
@@ -2096,7 +2078,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 113
+          "_sl": 112
         },
         {
           "id": 125,
@@ -2114,7 +2096,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 114
+          "_sl": 113
         },
         {
           "id": 126,
@@ -2132,7 +2114,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 115
+          "_sl": 114
         },
         {
           "id": 127,
@@ -2150,7 +2132,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 116
+          "_sl": 115
         },
         {
           "id": 128,
@@ -2168,7 +2150,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 117
+          "_sl": 116
         },
         {
           "id": 129,
@@ -2186,7 +2168,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 118
+          "_sl": 117
         },
         {
           "id": 130,
@@ -2204,7 +2186,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 119
+          "_sl": 118
         },
         {
           "id": 131,
@@ -2222,7 +2204,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 120
+          "_sl": 119
         },
         {
           "id": 132,
@@ -2240,7 +2222,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 121
+          "_sl": 120
         },
         {
           "id": 133,
@@ -2258,7 +2240,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 122
+          "_sl": 121
         },
         {
           "id": 134,
@@ -2276,7 +2258,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 123
+          "_sl": 122
         },
         {
           "id": 136,
@@ -2294,7 +2276,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 124
+          "_sl": 123
         },
         {
           "id": 139,
@@ -2312,7 +2294,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 125
+          "_sl": 124
         }
       ]
     },
@@ -2336,7 +2318,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 126
+          "_sl": 125
         }
       ]
     },
@@ -2360,7 +2342,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 127
+          "_sl": 126
         },
         {
           "id": 1000011,
@@ -2378,7 +2360,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 128
+          "_sl": 127
         },
         {
           "id": 1000012,
@@ -2396,7 +2378,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 129
+          "_sl": 128
         },
         {
           "id": 1000013,
@@ -2414,7 +2396,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 130
+          "_sl": 129
         },
         {
           "id": 1000014,
@@ -2432,7 +2414,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 131
+          "_sl": 130
         },
         {
           "id": 1000015,
@@ -2450,7 +2432,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 132
+          "_sl": 131
         },
         {
           "id": 1000016,
@@ -2468,7 +2450,7 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 133
+          "_sl": 132
         },
         {
           "id": 1000017,
@@ -2486,10 +2468,10 @@
           "vat": "Y",
           "supportRetail": 0,
           "supportWholesale": 0,
-          "_sl": 134
+          "_sl": 133
         }
       ]
     }
   ],
-  "updatedAt": "2026-09-09T13:47:27.342Z"
+  "updatedAt": "2026-09-09T13:47:34.186Z"
 }
