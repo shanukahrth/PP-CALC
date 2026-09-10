@@ -625,7 +625,7 @@
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 7680,
-          "supportWholesale": 7680,
+          "supportWholesale": null,
           "_sl": 34
         },
         {
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-10T06:30:29.453Z"
+  "updatedAt": "2026-09-10T06:30:31.916Z"
 }
