@@ -757,7 +757,7 @@
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": -22500,
-          "supportWholesale": -14750,
+          "supportWholesale": -22500,
           "_sl": 41
         },
         {
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-10T06:36:36.037Z"
+  "updatedAt": "2026-09-10T06:36:41.363Z"
 }
