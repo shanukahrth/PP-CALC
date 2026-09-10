@@ -1299,7 +1299,7 @@
           "code": "HT-S60",
           "size": null,
           "soh": null,
-          "costOverride": null,
+          "costOverride": 161782.3786,
           "mrp": 229999,
           "exDisc": 20000,
           "sugMrp": 244999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-10T05:10:39.694Z"
+  "updatedAt": "2026-09-10T05:10:47.272Z"
 }
