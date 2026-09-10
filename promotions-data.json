@@ -1893,7 +1893,7 @@
           "sugMrp": 499999,
           "sugDisc": 175000,
           "remarks": "EOL",
-          "wPrice": 292499.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1911,7 +1911,7 @@
           "sugMrp": 27999,
           "sugDisc": 3000,
           "remarks": "EOL",
-          "wPrice": 22499.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1929,7 +1929,7 @@
           "sugMrp": 27999,
           "sugDisc": 3000,
           "remarks": "EOL",
-          "wPrice": 22499.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1947,7 +1947,7 @@
           "sugMrp": 79999,
           "sugDisc": 40000,
           "remarks": "EOL",
-          "wPrice": 35999.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1965,7 +1965,7 @@
           "sugMrp": 59999,
           "sugDisc": 30000,
           "remarks": "EOL",
-          "wPrice": 26999.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -1983,7 +1983,7 @@
           "sugMrp": 27999,
           "sugDisc": null,
           "remarks": "EOL",
-          "wPrice": 24499.125,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-10T06:13:59.966Z"
+  "updatedAt": "2026-09-10T06:14:12.737Z"
 }
