@@ -1124,7 +1124,7 @@
           "exDisc": 30000,
           "sugMrp": 139999,
           "sugDisc": 28000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": 98999.1,
           "freeIssue": "",
           "vat": "Y",
@@ -1142,7 +1142,7 @@
           "exDisc": 100000,
           "sugMrp": 658999,
           "sugDisc": 100000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
@@ -1160,7 +1160,7 @@
           "exDisc": 140000,
           "sugMrp": 999999,
           "sugDisc": 140000,
-          "remarks": "",
+          "remarks": "EOL",
           "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-09T14:05:34.231Z"
+  "updatedAt": "2026-09-10T04:59:54.556Z"
 }
