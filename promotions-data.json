@@ -861,11 +861,11 @@
           "sugMrp": 249999,
           "sugDisc": 60000,
           "remarks": "Discontinued.",
-          "wPrice": 179999.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": -12000,
-          "supportWholesale": -8260,
+          "supportWholesale": null,
           "_sl": 47
         },
         {
@@ -879,7 +879,7 @@
           "sugMrp": 299999,
           "sugDisc": 70000,
           "remarks": "Discontinued.",
-          "wPrice": 215999.1,
+          "wPrice": null,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": -18000,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-10T06:37:31.768Z"
+  "updatedAt": "2026-09-10T06:37:43.281Z"
 }
