@@ -639,7 +639,7 @@
           "sugMrp": 259999,
           "sugDisc": 10000,
           "remarks": "Price have been adjusted as per the last shipment",
-          "wPrice": null,
+          "wPrice": 224999,
           "freeIssue": "",
           "vat": "Y",
           "supportRetail": 0,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-10T07:13:01.511Z"
+  "updatedAt": "2026-09-10T07:13:15.185Z"
 }
