@@ -615,7 +615,7 @@
           "code": "TCL65P6K",
           "size": 65,
           "soh": null,
-          "costOverride": 115038.4326,
+          "costOverride": 115035.4326,
           "mrp": 249999,
           "exDisc": 25000,
           "sugMrp": 249999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-11T06:21:03.401Z"
+  "updatedAt": "2026-09-11T06:21:06.372Z"
 }
