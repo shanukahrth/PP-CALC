@@ -1440,7 +1440,7 @@
           "wPrice": 197999,
           "freeIssue": "",
           "vat": "Y",
-          "supportRetail": -22800,
+          "supportRetail": null,
           "supportWholesale": -22800,
           "_sl": 78
         },
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-10T08:57:17.397Z"
+  "updatedAt": "2026-09-11T03:54:58.394Z"
 }
