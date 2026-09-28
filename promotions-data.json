@@ -654,7 +654,7 @@
           "costOverride": 203341.5337,
           "mrp": 339999,
           "exDisc": 25000,
-          "sugMrp": 349999,
+          "sugMrp": 359999,
           "sugDisc": 10000,
           "remarks": "Price have been adjusted as per the last shipment",
           "wPrice": 305999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-27T04:46:55.504Z"
+  "updatedAt": "2026-09-28T05:02:10.106Z"
 }
