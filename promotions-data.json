@@ -951,7 +951,7 @@
           "code": "SMGUA32H5000",
           "size": null,
           "soh": null,
-          "costOverride": 54734.9378,
+          "costOverride": 53867.2691,
           "mrp": 74999,
           "exDisc": 10000,
           "sugMrp": 74999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-10-02T06:27:09.579Z"
+  "updatedAt": "2026-10-02T06:27:13.658Z"
 }
