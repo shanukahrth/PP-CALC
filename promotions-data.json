@@ -507,7 +507,7 @@
           "code": "TCL43S5K",
           "size": 43,
           "soh": null,
-          "costOverride": 71957.9742,
+          "costOverride": 72051.736,
           "mrp": 129999,
           "exDisc": 15000,
           "sugMrp": 134999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-10-02T06:26:48.279Z"
+  "updatedAt": "2026-10-02T06:26:55.344Z"
 }
