@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5"/>
-<title>PP Calculator</title>
+<title>P&amp;P Calculator — Price &amp; Profitability</title>
 <style>
 :root{
   --bg:#f1f5f9; --card:#ffffff; --border:#e2e8f0; --text:#0f172a; --muted:#64748b;
@@ -187,7 +187,7 @@ table.promo-table thead th:nth-child(1),table.promo-table thead th:nth-child(2){
       <div class="action-bar">
         <div class="inner">
           <button id="exportSingle">⬇ Save Excel now</button>
-          <span class="small">Exports <strong>PP Format_(ProductCode).xlsx</strong></span><span class="small" style="display:block;margin-top:4px">From the shared team link this saves a .csv (opens in Excel; a save prompt appears). Opened as the standalone file, it saves the full styled .xlsx instead.</span>
+          <span class="small">Exports <strong>PP Format_(ProductCode).xlsx</strong></span>
         </div>
       </div>
     </section>
@@ -202,7 +202,7 @@ table.promo-table thead th:nth-child(1),table.promo-table thead th:nth-child(2){
       <div class="action-bar">
         <div class="inner">
           <button id="exportBatchZip" class="secondary">⬇ Export ZIP</button>
-          <span class="small">One .xlsx per filled-in product, bundled as <strong>PP_Batch_Separate_Files.zip</strong></span><span class="small" style="display:block;margin-top:4px">From the shared team link this saves one combined .csv with all filled-in products (opens in Excel; a save prompt appears). Opened as the standalone file, it bundles full .xlsx files into one .zip instead.</span>
+          <span class="small">One .xlsx per filled-in product, bundled as <strong>PP_Batch_Separate_Files.zip</strong></span>
         </div>
       </div>
     </section>
@@ -228,10 +228,13 @@ table.promo-table thead th:nth-child(1),table.promo-table thead th:nth-child(2){
         <div class="row" id="revertRow" style="margin-top:10px;display:none">
           <button id="revertEmbedded" class="ghost" type="button">Revert to embedded dataset</button>
         </div>
+        <div class="row" id="ghPublishCostRow" style="margin-top:10px">
+          <button id="ghPublishCostBtn" class="ghost" type="button">⬆ Publish this cost list to GitHub</button>
+          <span class="small" id="ghCostStatus"></span>
+        </div>
         <div class="hint" style="margin-top:12px;margin-bottom:0">
           Expected columns: <strong>Product Code</strong>, a quantity column (e.g. Closing Units), and the average landed cost column (e.g. "AVG. Cost Without Duty free"). Upload the same monthly export each time — headers are matched automatically.
-        
-          After uploading, go to the <strong>Promotions Sheet</strong> tab and click “Save &amp; Share” to publish this month’s cost list for your whole team.
+          After uploading, click "Publish this cost list to GitHub" so your whole team gets the updated costs (requires GitHub Sync to be set up — see the Promotions Sheet tab).
         </div>
       </div>
 
@@ -251,11 +254,17 @@ table.promo-table thead th:nth-child(1),table.promo-table thead th:nth-child(2){
     <!-- PROMOTIONS SHEET TAB -->
     <section id="tab-promo" class="tabpanel">
       <div class="card">
-        <h3>Promotions Sheet <span class="badge-warn" id="promoReadOnlyBadge" style="display:none">View only</span></h3>
-        <div class="hint">All active promotions for this category, grouped by brand/segment. Add products, set the suggested offer, and Gross Margin updates live as you type. Click <strong>Save &amp; Share</strong> so your team sees the same sheet.</div>
+        <div class="row between wrap" style="margin-bottom:4px">
+          <h3 style="margin:0">Promotions Sheet</h3>
+          <button id="promoSaveIndicator" class="save-indicator state-off" type="button" title="Click to save now">○ Loading…</button>
+        </div>
+        <div class="hint">All active promotions for this category, grouped by brand/segment. Add products, set the suggested offer, and Gross Margin updates live as you type — changes <strong>auto-save to GitHub</strong> a couple of seconds after you stop typing, so your team sees the same sheet without you needing to click anything.</div>
         <div class="row between wrap" style="margin-top:6px">
           <div class="small" id="promoSaveStatus">Loading…</div>
-          <button id="promoAddCatBtn" class="ghost" type="button">+ Add Category</button>
+          <div class="row" style="gap:8px">
+            <button id="ghSettingsBtn" class="ghost" type="button">⚙ GitHub Sync</button>
+            <button id="promoAddCatBtn" class="ghost" type="button">+ Add Category</button>
+          </div>
         </div>
       </div>
 
@@ -263,12 +272,42 @@ table.promo-table thead th:nth-child(1),table.promo-table thead th:nth-child(2){
 
       <div class="action-bar">
         <div class="inner">
-          <button id="promoSaveBtn">⬆ Save &amp; Share</button>
+          <button id="promoSaveBtn">⬆ Save to GitHub</button>
+          <button id="promoForceSaveBtn" class="force-save-btn" type="button" title="Overwrite GitHub with your current data, discarding anyone else's changes since you last loaded it">⚠ Force Save (Overwrite)</button>
           <button id="promoExportBtn" class="secondary">⬇ Export for Finance</button>
-          <span class="small">Offer columns plus GM% and Wholesale GM% — cost figures themselves are not included. Saves as .csv from the shared link, or a full .xlsx when opened as a standalone file.</span>
+          <span class="small">Auto-saves ~2s after your last edit. Offer columns plus GM%, Wholesale GM% and Support figures — cost itself is not included. Exports a full styled .xlsx.</span>
         </div>
       </div>
     </section>
+
+    <!-- GitHub Sync settings modal -->
+    <div id="ghSettingsOverlay" class="modal-overlay">
+      <div class="modal" style="width:480px;max-width:95vw">
+        <div class="head">
+          <div>GitHub Sync settings</div>
+          <button id="ghSettingsClose" class="gray">Close</button>
+        </div>
+        <div class="body">
+          <div class="small" style="margin-bottom:10px">
+            This device connects to the shared team repo (<strong>shanukahrth/PP-CALC</strong>) automatically — nothing to type there. Just paste your own Personal Access Token below. It's stored only in this browser's local storage and is sent only to GitHub directly — never to anyone else. Use a fine-grained token scoped to just this one repository, with only "Contents: Read and write" permission, and give it an expiry date.
+          </div>
+          <label class="small">Personal Access Token (only needed to save — leave blank to view only)</label>
+          <input id="ghToken" type="password" placeholder="github_pat_…" style="margin-bottom:8px"/>
+          <div class="small" style="margin-bottom:10px">
+            Create one at <strong>github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token</strong>. Under "Repository access," pick "Only select repositories" and choose <strong>PP-CALC</strong>. Under "Permissions → Repository permissions," set <strong>Contents</strong> to <strong>Read and write</strong>.
+          </div>
+          <label class="small" style="display:flex;align-items:flex-start;gap:7px;margin-bottom:10px;cursor:pointer">
+            <input id="ghAlwaysOverwrite" type="checkbox" style="margin-top:3px"/>
+            <span>Always overwrite with my data on save (skip conflict checks) — every save from this device, including auto-save, pushes your current sheet over whatever is on GitHub, even if someone else saved in between. Use only if you know you should be the source of truth right now.</span>
+          </label>
+          <div id="ghTestResult" class="small" style="margin-bottom:10px"></div>
+          <div class="row" style="gap:8px">
+            <button id="ghTestBtn" class="ghost" type="button">Test Connection</button>
+            <button id="ghSaveSettingsBtn" type="button">Save Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </div>
 
@@ -333,36 +372,52 @@ const PASSWORD = "PP123";
 let landedUnlocked = false, usingEmbedded = true;
 let ProductIndex = new Map();
 
-// ---------- Promotions Sheet: shared state ----------
+// ---------- Promotions Sheet: shared state (persisted to a GitHub repo, not claude.ai) ----------
 let PROMO_STATE = {categories: []};
 let promoCatSeq = 1000, promoRowSeq = 1000000;
-let promoWriteBlocked = false;
-(function initPromoState(){
-  let payload = null;
-  try{
-    const tag = document.getElementById('promoDataScript');
-    if(tag && tag.textContent.trim()) payload = JSON.parse(tag.textContent);
-  }catch(e){ console.error('Could not parse promo data', e); }
-  if(payload && Array.isArray(payload.categories)) PROMO_STATE.categories = payload.categories;
-  window.__promoSharedDataset = (payload && payload.sharedDataset) ? payload.sharedDataset : null;
+let promoLastSha = null; // sha of promotions-data.json as last loaded — used to detect save conflicts
+function ghRecalcSeq(){
   PROMO_STATE.categories.forEach(c=>{
     promoCatSeq = Math.max(promoCatSeq, Number(c.id)||0);
     (c.rows||[]).forEach(r=>{ promoRowSeq = Math.max(promoRowSeq, Number(r.id)||0); });
   });
+}
+// Hoisted up from the GitHub Sync section below: initPromoState() calls ghRefreshPromoFromGitHub()/
+// ghMaybeLoadSharedCost() immediately on load, and those read these via ghSettings() — if declared
+// only further down the file, that's a "Cannot access before initialization" error on every page
+// load (these are `const`, so unlike the `function` declarations they aren't usable before their
+// own line runs), silently breaking the auto-pull-latest-on-load feature. Repo location is fixed
+// for this team — nobody has to type it in. Only the personal access token is ever entered by hand.
+const GH_REPO_OWNER = 'shanukahrth';
+const GH_REPO_NAME = 'PP-CALC';
+const GH_REPO_BRANCH = 'main';
+(function initPromoState(){
+  // 1) seed from the embedded starter data baked into this file, as an immediate fallback
+  let payload = null;
+  try{
+    const tag = document.getElementById('promoDataScript');
+    if(tag && tag.textContent.trim()) payload = JSON.parse(tag.textContent);
+  }catch(e){ console.error('Could not parse embedded promo seed', e); }
+  if(payload && Array.isArray(payload.categories)) PROMO_STATE.categories = payload.categories;
+  ghRecalcSeq();
+
+  // 2) offer to restore a local unsaved draft (per-device safety net, unrelated to GitHub)
   try{
     const draftRaw = localStorage.getItem('promoDraft_v1');
     if(draftRaw){
       const draft = JSON.parse(draftRaw);
       if(draft && Array.isArray(draft.categories) && draft.categories.length && confirm('You have an unsaved Promotions Sheet draft on this device (from before your last save or browser close). Restore it now?')){
         PROMO_STATE.categories = draft.categories;
-        draft.categories.forEach(c=>{
-          promoCatSeq = Math.max(promoCatSeq, Number(c.id)||0);
-          (c.rows||[]).forEach(r=>{ promoRowSeq = Math.max(promoRowSeq, Number(r.id)||0); });
-        });
+        ghRecalcSeq();
       }
       localStorage.removeItem('promoDraft_v1');
     }
   }catch(e){ /* localStorage may be unavailable — ignore */ }
+
+  // 3) pull the latest team data from GitHub, if this device is configured to (async — re-renders
+  //    the tab and refreshes the shared landed-cost dataset when/if this lands)
+  ghRefreshPromoFromGitHub(true);
+  ghMaybeLoadSharedCost();
 })();
 
 
@@ -400,16 +455,9 @@ function refreshDatasetUI(sourceLabel){
 }
 
 (function initEmbedded(){
-  if(window.__promoSharedDataset && Array.isArray(window.__promoSharedDataset.tuples) && window.__promoSharedDataset.tuples.length){
-    loadFromTuples(window.__promoSharedDataset.tuples);
-    usingEmbedded = false; landedUnlocked = true;
-    setStatus(`Loaded ${ProductIndex.size.toLocaleString()} rows (shared — ${window.__promoSharedDataset.label||'team dataset'}).`);
-    refreshDatasetUI((window.__promoSharedDataset.label||'Shared dataset') + ' (' + ProductIndex.size.toLocaleString() + ' codes)');
-  } else {
-    loadFromTuples(EMBEDDED_TUPLES);
-    setStatus(`Loaded ${ProductIndex.size.toLocaleString()} rows (embedded — Sep 2026 landed cost list).`);
-    refreshDatasetUI('Embedded — Sep 2026 (' + ProductIndex.size.toLocaleString() + ' codes)');
-  }
+  loadFromTuples(EMBEDDED_TUPLES);
+  setStatus(`Loaded ${ProductIndex.size.toLocaleString()} rows (embedded — Sep 2026 landed cost list).`);
+  refreshDatasetUI('Embedded — Sep 2026 (' + ProductIndex.size.toLocaleString() + ' codes)');
   setLockUI();
 })();
 
@@ -730,27 +778,10 @@ document.getElementById('exportSingle').addEventListener('click', async ()=>{
       comm:(document.getElementById('comm').value||'').trim(),
       channel:(document.getElementById('channel').value||'Retail').trim()
     };
-    let handled = false;
-    const downloads = await tryDownloadsCapability();
-    if(downloads){
-      try{
-        const csv = buildPPCsv([ctx]);
-        await downloads.save({filename:'PP Format_'+(ctx.prod||'export')+'.csv', data: csv});
-        handled = true;
-      }catch(saveErr){
-        if(saveErr && saveErr.code === 'declined'){
-          handled = true; // viewer said no — respect that, don't also trigger a second save path
-        } else {
-          console.warn('downloads.save failed, falling back to local .xlsx build', saveErr);
-        }
-      }
-    }
-    if(!handled){
-      const wb=await XlsxPopulate.fromBlankAsync(); const sh=wb.sheet(0); await buildSheet(sh, ctx);
-      const blob=await wb.outputAsync(); const url=URL.createObjectURL(blob);
-      const a=document.createElement('a'); a.href=url; a.download='PP Format_'+(ctx.prod||'export')+'.xlsx';
-      document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
-    }
+    const wb=await XlsxPopulate.fromBlankAsync(); const sh=wb.sheet(0); await buildSheet(sh, ctx);
+    const blob=await wb.outputAsync(); const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download='PP Format_'+(ctx.prod||'export')+'.xlsx';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
   }catch(e){ console.error('Export failed', e); alert('Export failed. See console.'); }
   finally{ btn.disabled=false; btn.textContent=original; }
 });
@@ -824,7 +855,7 @@ document.getElementById('exportBatchZip').addEventListener('click', async ()=>{
   const btn=document.getElementById('exportBatchZip'); const original=btn.textContent;
   try{
     btn.disabled=true; btn.innerHTML='<span class="spinner"></span>Building…';
-    const ctxs = [];
+    const zip=new JSZip(); let any=false;
     for(let i=0;i<6;i++){
       const ctx = {
         prod:(document.getElementById(`b_prod_${i}`)?.value||'').trim(),
@@ -836,40 +867,17 @@ document.getElementById('exportBatchZip').addEventListener('click', async ()=>{
         comm:(document.getElementById(`b_comm_${i}`)?.value||'').trim(),
         channel:(document.getElementById(`b_channel_${i}`)?.value||'Retail').trim()
       };
-      if(ctx.prod) ctxs.push(ctx);
+      if(!ctx.prod) continue;
+      any=true;
+      const wb=await XlsxPopulate.fromBlankAsync(); const sh=wb.sheet(0); await buildSheet(sh, ctx);
+      const blob=await wb.outputAsync(); const ab=await blob.arrayBuffer();
+      zip.file(`PP Format_${ctx.prod}_${ctx.channel.charAt(0).toUpperCase()}${ctx.channel.slice(1).toLowerCase()}.xlsx`, new Uint8Array(ab));
     }
-    if(!ctxs.length){ alert('Enter at least one product code before exporting.'); return; }
-
-    let handled = false;
-    const downloads = await tryDownloadsCapability();
-    if(downloads){
-      try{
-        const csv = buildPPCsv(ctxs);
-        const filename = 'PP_Batch_'+new Date().toISOString().slice(0,10)+'.csv';
-        await downloads.save({filename, data: csv});
-        handled = true;
-      }catch(saveErr){
-        if(saveErr && saveErr.code === 'declined'){
-          handled = true; // viewer said no — respect that, don't also trigger a second save path
-        } else {
-          console.warn('downloads.save failed, falling back to local .zip build', saveErr);
-        }
-      }
-    }
-    if(!handled){
-      const zip=new JSZip(); let any=false;
-      for(const ctx of ctxs){
-        any=true;
-        const wb=await XlsxPopulate.fromBlankAsync(); const sh=wb.sheet(0); await buildSheet(sh, ctx);
-        const blob=await wb.outputAsync(); const ab=await blob.arrayBuffer();
-        zip.file(`PP Format_${ctx.prod}_${ctx.channel.charAt(0).toUpperCase()}${ctx.channel.slice(1).toLowerCase()}.xlsx`, new Uint8Array(ab));
-      }
-      if(!any){ alert('Enter at least one product code before exporting.'); return; }
-      const zipBlob=await zip.generateAsync({type:'blob'}); const url=URL.createObjectURL(zipBlob);
-      const a=document.createElement('a'); a.href=url; a.download='PP_Batch_Separate_Files.zip'; document.body.appendChild(a);
-      a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
-    }
-  }catch(e){ console.error('Export failed', e); alert('Export failed. See console.'); }
+    if(!any){ alert('Enter at least one product code before exporting.'); return; }
+    const zipBlob=await zip.generateAsync({type:'blob'}); const url=URL.createObjectURL(zipBlob);
+    const a=document.createElement('a'); a.href=url; a.download='PP_Batch_Separate_Files.zip'; document.body.appendChild(a);
+    a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
+  }catch(e){ console.error('ZIP export failed', e); alert('ZIP export failed. See console.'); }
   finally{ btn.disabled=false; btn.textContent=original; }
 });
 
@@ -907,15 +915,29 @@ function newPromoCategory(){
   return {id:promoCatSeq, name:'New Category', rows:[newPromoRow()]};
 }
 
-// ---------- Promotions Sheet: local draft safety net ----------
+// ---------- Promotions Sheet: local draft safety net + auto-save ----------
 let promoDraftTimer = null;
+let promoAutoSaveTimer = null;
+const PROMO_AUTOSAVE_DELAY_MS = 2200; // quiet period after the last edit before auto-saving to GitHub
+function scheduleAutoSave(){
+  clearTimeout(promoAutoSaveTimer);
+  promoAutoSaveTimer = setTimeout(()=>{ performPromoSave({auto:true}); }, PROMO_AUTOSAVE_DELAY_MS);
+}
 function markDirty(){
-  const s = document.getElementById('promoSaveStatus');
-  if(s && !promoWriteBlocked) s.textContent = 'Unsaved changes — click "Save & Share" so your team sees them.';
+  const s = ghSettings();
+  const statusEl = document.getElementById('promoSaveStatus');
+  if(s && s.owner && s.repo && s.token){
+    updateSaveIndicator('dirty', 'Unsaved — saving soon…');
+    if(statusEl) statusEl.textContent = 'Unsaved changes — auto-saving to GitHub shortly (or click the save button above to save now).';
+  } else {
+    updateSaveIndicator('off', 'Not connected');
+    if(statusEl) statusEl.textContent = 'Unsaved changes — not connected to GitHub yet. Click ⚙ GitHub Sync to enable auto-save.';
+  }
   clearTimeout(promoDraftTimer);
   promoDraftTimer = setTimeout(()=>{
     try{ localStorage.setItem('promoDraft_v1', JSON.stringify({categories: PROMO_STATE.categories})); }catch(e){}
   }, 400);
+  scheduleAutoSave();
 }
 
 // ---------- Promotions Sheet: rendering ----------
@@ -999,7 +1021,6 @@ function renderPromoTab(){
       }
     });
   });
-  updatePromoReadOnlyUI();
 }
 function updatePromoRowComputed(catId, rowId){
   const cat = PROMO_STATE.categories.find(c=>c.id===catId); if(!cat) return;
@@ -1034,18 +1055,6 @@ function applyProductPick(catId, rowId, code){
   }
   updatePromoRowComputed(catId, rowId);
   markDirty();
-}
-function updatePromoReadOnlyUI(){
-  const badge = document.getElementById('promoReadOnlyBadge');
-  const saveBtn = document.getElementById('promoSaveBtn');
-  if(!badge || !saveBtn) return;
-  if(promoWriteBlocked){
-    badge.style.display = '';
-    saveBtn.style.display = 'none';
-  } else {
-    badge.style.display = 'none';
-    saveBtn.style.display = '';
-  }
 }
 
 // ---------- Promotions Sheet: event delegation ----------
@@ -1139,68 +1148,315 @@ if(promoAddCatBtnEl) promoAddCatBtnEl.addEventListener('click', ()=>{
   markDirty();
 });
 
-// ---------- Promotions Sheet: Save & Share (publishes the live artifact for the team) ----------
-async function publishPromoState(){
+// ============================================================================
+// GitHub Sync — reads/writes a JSON file in a repo via the GitHub Contents API,
+// directly from each person's own browser. No server of ours is involved: the
+// browser talks straight to api.github.com using a token the person enters and
+// stores only in this browser's localStorage. This is what replaces the
+// claude.ai "live artifact" publish/share mechanism for a page hosted on GitHub.
+// ============================================================================
+// Repo location (GH_REPO_OWNER/NAME/BRANCH) is declared earlier in the file now — see the comment
+// next to initPromoState() above for why.
+function ghUtf8ToBase64(str){ return btoa(unescape(encodeURIComponent(str))); }
+function ghBase64ToUtf8(b64){ return decodeURIComponent(escape(atob(String(b64||'').replace(/\n/g,'')))); }
+function ghSettings(){
+  let stored = null;
+  try{ stored = JSON.parse(localStorage.getItem('ghSyncSettings_v1')||'null'); }catch(e){ stored = null; }
+  return {
+    owner: GH_REPO_OWNER,
+    repo: GH_REPO_NAME,
+    branch: GH_REPO_BRANCH,
+    token: (stored && stored.token) || '',
+    // When true, every save (manual and auto) overwrites whatever is currently on GitHub with
+    // this browser's data, instead of stopping on a conflict — an explicit opt-in per device.
+    alwaysOverwrite: !!(stored && stored.alwaysOverwrite),
+    promoPath: (stored && stored.promoPath) || 'promotions-data.json',
+    costPath: (stored && stored.costPath) || 'landed-cost.json'
+  };
+}
+function ghSaveSettings(s){ try{ localStorage.setItem('ghSyncSettings_v1', JSON.stringify(s)); }catch(e){} }
+
+// ---------- Promotions Sheet: save-status indicator (the pill button above the sheet) ----------
+function updateSaveIndicator(state, text){
+  const el = document.getElementById('promoSaveIndicator');
+  if(!el) return;
+  el.classList.remove('state-saved','state-dirty','state-saving','state-error','state-off');
+  el.classList.add('state-'+state);
+  if(state === 'saving'){
+    el.innerHTML = '<span class="spinner"></span>'+(text||'Saving…');
+  } else {
+    const icons = {saved:'✓ ', dirty:'● ', error:'⚠ ', off:'○ '};
+    el.textContent = (icons[state]||'') + (text||'');
+  }
+}
+
+async function ghApiGet(path){
+  const s = ghSettings();
+  if(!s || !s.owner || !s.repo) return {ok:false, reason:'not_configured'};
+  const branch = s.branch || 'main';
+  const url = `https://api.github.com/repos/${encodeURIComponent(s.owner)}/${encodeURIComponent(s.repo)}/contents/${path}?ref=${encodeURIComponent(branch)}`;
+  const headers = {Accept:'application/vnd.github+json'};
+  if(s.token) headers['Authorization'] = 'Bearer '+s.token;
+  let res;
+  try{ res = await fetch(url, {headers}); }catch(e){ return {ok:false, reason:'network'}; }
+  if(res.status === 404) return {ok:false, reason:'not_found'};
+  if(res.status === 401 || res.status === 403) return {ok:false, reason:'auth', status:res.status};
+  if(!res.ok) return {ok:false, reason:'http', status:res.status};
+  const json = await res.json();
+  let data = null;
+  try{ data = JSON.parse(ghBase64ToUtf8(json.content)); }catch(e){ return {ok:false, reason:'parse'}; }
+  return {ok:true, data, sha: json.sha};
+}
+async function ghApiGetPublicRaw(path){
+  const s = ghSettings();
+  if(!s || !s.owner || !s.repo) return {ok:false, reason:'not_configured'};
+  const branch = s.branch || 'main';
+  const url = `https://raw.githubusercontent.com/${encodeURIComponent(s.owner)}/${encodeURIComponent(s.repo)}/${encodeURIComponent(branch)}/${path}?_=${Date.now()}`;
+  let res;
+  try{ res = await fetch(url, {cache:'no-store'}); }catch(e){ return {ok:false, reason:'network'}; }
+  if(res.status === 404) return {ok:false, reason:'not_found'};
+  if(!res.ok) return {ok:false, reason:'http', status:res.status};
+  let data;
+  try{ data = await res.json(); }catch(e){ return {ok:false, reason:'parse'}; }
+  return {ok:true, data, sha:null};
+}
+async function ghLoadFile(path){
+  const s = ghSettings();
+  if(!s || !s.owner || !s.repo) return {ok:false, reason:'not_configured'};
+  if(s.token) return ghApiGet(path);
+  return ghApiGetPublicRaw(path); // no token entered — only works if the repo is public
+}
+// knownSha MUST be the sha from when the caller last actually loaded this file into its editing
+// session (e.g. promoLastSha) — NOT freshly re-fetched right before the write. Re-fetching here
+// would always match the file GitHub is about to compare against, so a real conflict (someone
+// else saved after you loaded, before you saved) would never be detected. Omit knownSha only when
+// creating a brand-new file that has never been saved before.
+async function ghApiPut(path, dataObj, message, knownSha){
+  const s = ghSettings();
+  if(!s || !s.owner || !s.repo) return {ok:false, reason:'not_configured'};
+  if(!s.token) return {ok:false, reason:'no_token'};
+  const branch = s.branch || 'main';
+  const url = `https://api.github.com/repos/${encodeURIComponent(s.owner)}/${encodeURIComponent(s.repo)}/contents/${path}`;
+  const body = {
+    message: message || ('Update '+path+' — '+new Date().toISOString()),
+    content: ghUtf8ToBase64(JSON.stringify(dataObj, null, 2)),
+    branch
+  };
+  if(knownSha) body.sha = knownSha;
+  let res;
+  try{
+    res = await fetch(url, {
+      method:'PUT',
+      headers:{'Authorization':'Bearer '+s.token, 'Accept':'application/vnd.github+json', 'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    });
+  }catch(e){ return {ok:false, reason:'network'}; }
+  if(res.status === 401 || res.status === 403) return {ok:false, reason:'auth', status:res.status};
+  if(res.status === 409 || res.status === 422) return {ok:false, reason:'conflict', status:res.status};
+  if(!res.ok){
+    let msg=''; try{ const j=await res.json(); msg=j.message||''; }catch(e){}
+    return {ok:false, reason:'http', status:res.status, message:msg};
+  }
+  const json = await res.json();
+  return {ok:true, sha: json.content && json.content.sha};
+}
+
+async function ghRefreshPromoFromGitHub(){
+  const s = ghSettings();
   const statusEl = document.getElementById('promoSaveStatus');
-  const btn = document.getElementById('promoSaveBtn');
-  if(promoWriteBlocked){ if(statusEl) statusEl.textContent = 'You have view-only access — your changes stay on this device only.'; return; }
-  if(!window.claude || typeof window.claude.use !== 'function'){
-    if(statusEl) statusEl.textContent = 'Live save isn\'t available in this view — changes stay on this device only.';
+  if(!s || !s.owner || !s.repo){
+    if(statusEl) statusEl.textContent = 'Not connected to GitHub — showing local starter data. Click ⚙ GitHub Sync to connect.';
+    updateSaveIndicator('off', 'Not connected');
     return;
   }
-  const original = btn.textContent;
-  btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Saving…';
-  try{
-    const artifact = await window.claude.use('artifact');
-    if(!artifact){
-      if(statusEl) statusEl.textContent = 'Live save isn\'t available in this view — changes stay on this device only.';
-      return;
+  if(statusEl) statusEl.textContent = 'Loading latest from GitHub…';
+  updateSaveIndicator('saving', 'Loading…');
+  const path = s.promoPath || 'promotions-data.json';
+  const res = await ghLoadFile(path);
+  if(res.ok){
+    if(res.data && Array.isArray(res.data.categories)){
+      PROMO_STATE.categories = res.data.categories;
+      ghRecalcSeq();
+      promoLastSha = res.sha;
+      renderPromoTab();
     }
-    const payload = {
-      version: 1,
-      savedAt: new Date().toISOString(),
-      categories: PROMO_STATE.categories,
-      sharedDataset: usingEmbedded ? null : {
-        label: (document.getElementById('dsLabel')||{}).textContent || 'Uploaded dataset',
-        tuples: Array.from(ProductIndex.values()).map(r=>[r.code, r.commodity, r.qty, r.landed])
+    const rowCount = PROMO_STATE.categories.reduce((n,c)=>n+(c.rows?c.rows.length:0),0);
+    if(statusEl) statusEl.textContent = `Connected — ${s.owner}/${s.repo} (${s.branch||'main'}). Loaded ${rowCount} rows.`;
+    updateSaveIndicator('saved', 'Synced');
+  } else if(res.reason === 'not_found'){
+    if(statusEl) statusEl.textContent = `Connected — ${s.owner}/${s.repo}, but no shared sheet saved there yet. Showing local starter data — click "Save to GitHub" to create it.`;
+    updateSaveIndicator('dirty', 'Not saved yet');
+  } else if(res.reason === 'auth'){
+    if(statusEl) statusEl.textContent = 'GitHub token invalid, expired, or lacks access — check ⚙ GitHub Sync.';
+    updateSaveIndicator('error', 'Auth error');
+  } else if(res.reason === 'not_configured'){
+    if(statusEl) statusEl.textContent = 'Not connected to GitHub — showing local starter data. Click ⚙ GitHub Sync to connect.';
+    updateSaveIndicator('off', 'Not connected');
+  } else {
+    if(statusEl) statusEl.textContent = 'Could not load from GitHub (network or server error) — showing local starter data.';
+    updateSaveIndicator('error', 'Network error');
+  }
+}
+
+let ghCostSha = null; // sha of landed-cost.json as last loaded — used to detect publish conflicts
+async function ghMaybeLoadSharedCost(){
+  const s = ghSettings();
+  if(!s || !s.owner || !s.repo) return;
+  const path = s.costPath || 'landed-cost.json';
+  const res = await ghLoadFile(path);
+  if(res.ok && res.data && Array.isArray(res.data.tuples) && res.data.tuples.length){
+    ghCostSha = res.sha;
+    if(usingEmbedded){ // only auto-switch if still on the default — don't clobber an active local upload
+      loadFromTuples(res.data.tuples);
+      usingEmbedded = false; landedUnlocked = true;
+      setStatus(`Loaded ${ProductIndex.size.toLocaleString()} rows (shared via GitHub — ${res.data.label||'team dataset'}).`);
+      refreshDatasetUI((res.data.label||'Shared dataset') + ' (' + ProductIndex.size.toLocaleString() + ' codes)');
+      setLockUI();
+      renderPromoTab();
+    }
+  }
+}
+
+// Single save routine behind three entry points: the manual "Save to GitHub" button, the
+// auto-save timer (fires ~2.2s after the last edit), and the "Force Save (Overwrite)" button
+// (or the "always overwrite" setting) which grabs the CURRENT sha right before writing instead
+// of the sha this browser last loaded — so it always succeeds, deliberately discarding whatever
+// anyone else saved in between, rather than being stopped by the normal conflict check.
+let promoSaveInFlight = false;
+async function performPromoSave(opts){
+  opts = opts || {};
+  const auto = !!opts.auto;
+  const s = ghSettings();
+  const force = !!opts.force || !!s.alwaysOverwrite;
+
+  if(!s || !s.owner || !s.repo || !s.token){
+    if(auto){ updateSaveIndicator('off', 'Not connected'); return; }
+    alert('Set up GitHub Sync first (⚙ button) — a token with write access is required to save.');
+    document.getElementById('ghSettingsOverlay').style.display = 'flex';
+    return;
+  }
+  if(promoSaveInFlight){ if(auto) scheduleAutoSave(); return; } // don't overlap; auto-save will retry shortly
+  promoSaveInFlight = true;
+
+  const btn = document.getElementById(force ? 'promoForceSaveBtn' : 'promoSaveBtn');
+  const statusEl = document.getElementById('promoSaveStatus');
+  const original = btn ? btn.textContent : null;
+  if(btn){ btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>'+(force?'Overwriting…':'Saving…'); }
+  updateSaveIndicator('saving', force ? 'Overwriting…' : 'Saving…');
+  try{
+    const path = s.promoPath || 'promotions-data.json';
+    const payload = {categories: PROMO_STATE.categories, updatedAt: new Date().toISOString()};
+    let knownSha = promoLastSha;
+    if(force){
+      const fresh = await ghApiGet(path);
+      knownSha = fresh.ok ? fresh.sha : undefined; // undefined is fine — creates the file if none exists yet
+    }
+    const msg = (force ? 'Promotions Sheet — forced overwrite — ' : 'Promotions Sheet update — ') + new Date().toISOString();
+    const res = await ghApiPut(path, payload, msg, knownSha);
+    if(res.ok){
+      promoLastSha = res.sha;
+      const ts = new Date().toLocaleTimeString();
+      if(statusEl) statusEl.textContent = (force ? 'Overwritten on GitHub ✓ (' : 'Saved to GitHub ✓ (') + ts + ')';
+      updateSaveIndicator('saved', 'Saved '+ts);
+      try{ localStorage.removeItem('promoDraft_v1'); }catch(e){}
+    } else if(res.reason === 'conflict'){
+      if(auto){
+        // Don't interrupt typing with a confirm() dialog from a background timer — just flag it
+        // and let the person resolve it deliberately via Save / Force Save.
+        updateSaveIndicator('error', 'Someone else saved first');
+        if(statusEl) statusEl.textContent = 'Auto-save paused — someone else saved changes since you loaded this sheet. Click "Save to GitHub" to review theirs, or "Force Save" to overwrite with your version.';
+      } else if(confirm('Someone else saved changes to this sheet after you last loaded it. Click OK to load their latest version now (you can redo your edits and save again), or Cancel to keep your current unsaved edits — you can also use "Force Save (Overwrite)" to push your version over theirs.')){
+        await ghRefreshPromoFromGitHub();
+      } else {
+        updateSaveIndicator('error', 'Not saved — conflict');
+        if(statusEl) statusEl.textContent = 'Not saved — someone else saved first. Try "Save to GitHub" again, or use "Force Save (Overwrite)" to push your version over theirs.';
       }
-    };
-    const res = await fetch(location.href, {cache:'no-store'});
-    if(!res.ok) throw {code:'upstream_error', message:'Could not fetch current page'};
-    const text = await res.text();
-    const marker = /<script id="promoDataScript" type="application\/json">[\s\S]*?<\/script>/;
-    if(!marker.test(text)) throw {code:'upstream_error', message:'Save marker not found'};
-    const newBlock = `<script id="promoDataScript" type="application/json">${JSON.stringify(payload)}<\/script>`;
-    const newHtml = text.replace(marker, newBlock);
-    await artifact.publish(newHtml);
-    try{ localStorage.removeItem('promoDraft_v1'); }catch(e){}
-    if(statusEl) statusEl.textContent = 'Saved — reloading to the shared version…';
-  } catch(err){
-    const code = err && err.code;
-    if(code==='not_writer' || code==='not_granted' || code==='capability_disabled' || code==='not_declared'){
-      promoWriteBlocked = true;
-      updatePromoReadOnlyUI();
-      if(statusEl) statusEl.textContent = 'You have view-only access — your changes stay on this device only.';
-    } else if(code==='conflict'){
-      if(statusEl) statusEl.textContent = 'Someone else just saved — loading their version…';
+    } else if(res.reason === 'auth'){
+      updateSaveIndicator('error', 'Auth error');
+      if(!auto) alert('GitHub rejected the token (invalid, expired, or missing write access to this repo). Check ⚙ GitHub Sync.');
+    } else if(res.reason === 'no_token'){
+      updateSaveIndicator('off', 'Token required');
+      if(!auto){ alert('A token with write access is required to save. Add one in ⚙ GitHub Sync.'); document.getElementById('ghSettingsOverlay').style.display = 'flex'; }
     } else {
-      console.error('Promo save failed', err);
-      if(statusEl) statusEl.textContent = 'Save failed — please try again.';
+      updateSaveIndicator('error', 'Save failed');
+      if(!auto) alert('Save failed ('+(res.reason||'unknown')+'). See browser console for details.');
+      console.error('GitHub save failed', res);
     }
   } finally {
-    btn.disabled = false;
-    if(btn.style.display!=='none') btn.textContent = original;
+    promoSaveInFlight = false;
+    if(btn){ btn.disabled = false; btn.textContent = original; }
   }
 }
 const promoSaveBtnEl = document.getElementById('promoSaveBtn');
-if(promoSaveBtnEl) promoSaveBtnEl.addEventListener('click', publishPromoState);
+if(promoSaveBtnEl) promoSaveBtnEl.addEventListener('click', ()=>{ clearTimeout(promoAutoSaveTimer); performPromoSave({}); });
 
-// ---------- Promotions Sheet: Export for Finance (offer columns only) ----------
-// A published artifact's sandbox does not allow a page to trigger its own file downloads
-// (blob/data links are inert there) — the `downloads` capability is the only way to hand a
-// viewer a file, and it does not support .xlsx. So: use the `downloads` capability (.csv,
-// opens fine in Excel) whenever it's available; otherwise — e.g. when this file was saved
-// locally and opened directly, outside any sandbox — build the full styled .xlsx as before.
+const promoForceSaveBtnEl = document.getElementById('promoForceSaveBtn');
+if(promoForceSaveBtnEl) promoForceSaveBtnEl.addEventListener('click', ()=>{
+  if(!confirm('This overwrites the shared Promotions Sheet on GitHub with YOUR current data on this device, discarding any changes anyone else has saved since you last loaded it. This can\'t be undone from here (though GitHub keeps the file\'s commit history). Continue?')) return;
+  clearTimeout(promoAutoSaveTimer);
+  performPromoSave({force:true});
+});
+
+const promoSaveIndicatorEl = document.getElementById('promoSaveIndicator');
+if(promoSaveIndicatorEl) promoSaveIndicatorEl.addEventListener('click', ()=>{
+  clearTimeout(promoAutoSaveTimer);
+  performPromoSave({});
+});
+
+// ---------- GitHub Sync: settings modal ----------
+function ghOpenSettingsModal(){
+  const s = ghSettings();
+  document.getElementById('ghToken').value = s.token||'';
+  const ow = document.getElementById('ghAlwaysOverwrite');
+  if(ow) ow.checked = !!s.alwaysOverwrite;
+  document.getElementById('ghTestResult').textContent = '';
+  document.getElementById('ghSettingsOverlay').style.display = 'flex';
+}
+const ghSettingsBtnEl = document.getElementById('ghSettingsBtn');
+if(ghSettingsBtnEl) ghSettingsBtnEl.addEventListener('click', ghOpenSettingsModal);
+const ghSettingsCloseEl = document.getElementById('ghSettingsClose');
+if(ghSettingsCloseEl) ghSettingsCloseEl.addEventListener('click', ()=>{ document.getElementById('ghSettingsOverlay').style.display='none'; });
+
+const ghSaveSettingsBtnEl = document.getElementById('ghSaveSettingsBtn');
+if(ghSaveSettingsBtnEl) ghSaveSettingsBtnEl.addEventListener('click', async ()=>{
+  const token = (document.getElementById('ghToken').value||'').trim();
+  const ow = document.getElementById('ghAlwaysOverwrite');
+  const alwaysOverwrite = !!(ow && ow.checked);
+  ghSaveSettings({
+    token,
+    alwaysOverwrite,
+    promoPath: 'promotions-data.json',
+    costPath: 'landed-cost.json'
+  });
+  document.getElementById('ghSettingsOverlay').style.display = 'none';
+  await ghRefreshPromoFromGitHub();
+  await ghMaybeLoadSharedCost();
+});
+
+const ghTestBtnEl = document.getElementById('ghTestBtn');
+if(ghTestBtnEl) ghTestBtnEl.addEventListener('click', async ()=>{
+  const resultEl = document.getElementById('ghTestResult');
+  resultEl.textContent = 'Testing…';
+  const token = (document.getElementById('ghToken').value||'').trim();
+  const url = `https://api.github.com/repos/${encodeURIComponent(GH_REPO_OWNER)}/${encodeURIComponent(GH_REPO_NAME)}`;
+  const headers = {Accept:'application/vnd.github+json'};
+  if(token) headers['Authorization'] = 'Bearer '+token;
+  try{
+    const res = await fetch(url, {headers});
+    if(res.status === 404){ resultEl.textContent = 'Repo not found — check with whoever set this up.'; return; }
+    if(res.status === 401){ resultEl.textContent = 'Token invalid or expired.'; return; }
+    if(!res.ok){ resultEl.textContent = 'GitHub returned an error ('+res.status+').'; return; }
+    const j = await res.json();
+    let note;
+    if(token) note = (j.permissions && j.permissions.push) ? ' — token has write access.' : ' — token may NOT have write access (double check its permissions).';
+    else note = ' — no token entered, so you can only read (and only if this repo is public), not save.';
+    resultEl.textContent = 'Found "'+j.full_name+'" ('+(j.private?'private':'public')+')'+note;
+  }catch(e){ resultEl.textContent = 'Network error reaching GitHub.'; }
+});
+
+// ---------- Promotions Sheet: Export for Finance (offer columns + GM%/Wholesale GM%) ----------
+// This is a plain standalone page (no publish-sandbox restrictions), so exports are always the
+// real, full styled .xlsx — no CSV/adaptive fallback needed here.
 const PROMO_FINANCE_HEADERS = ['Sl No','Product Code','SOH','Size','MRP','Existing Disc','MOP','Suggested MRP','Suggested Discount','Suggested MOP','Support (Retail)','GM%','Remarks/Free Issue','Wholesale Price','Wholesale Disc %','Support (Wholesale)','Wholesale GM%','Free Issues/Bundle Offers'];
 function promoFinanceRows(){
   const dataRows = []; // {isCategory, values:[...]}
@@ -1241,19 +1497,6 @@ function promoFinanceRows(){
   });
   return {dataRows, any};
 }
-function buildFinanceCsv(dataRows){
-  const esc = (v)=>{
-    if(v==null) return '';
-    const s = String(v);
-    return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s;
-  };
-  const lines = [PROMO_FINANCE_HEADERS.map(esc).join(',')];
-  dataRows.forEach(dr=>{
-    if(dr.isCategory) lines.push(esc(dr.name));
-    else lines.push(dr.values.map(esc).join(','));
-  });
-  return lines.join('\r\n');
-}
 async function buildFinanceXlsxBlob(dataRows){
   const wb = await XlsxPopulate.fromBlankAsync();
   const sh = wb.sheet(0); sh.name('Promotions');
@@ -1281,158 +1524,58 @@ async function buildFinanceXlsxBlob(dataRows){
 async function exportPromoFinance(){
   const btn = document.getElementById('promoExportBtn');
   const original = btn.textContent;
-  const statusEl = document.getElementById('promoSaveStatus');
   try{
     btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Building…';
     const {dataRows, any} = promoFinanceRows();
     if(!any){ alert('Add at least one product before exporting.'); return; }
     const filenameBase = 'Promotions_Finance_Export_'+new Date().toISOString().slice(0,10);
-    let handled = false;
-    if(window.claude && typeof window.claude.use === 'function'){
-      try{
-        const downloads = await window.claude.use('downloads');
-        if(downloads){
-          const csv = buildFinanceCsv(dataRows);
-          await downloads.save({filename: filenameBase+'.csv', data: csv});
-          handled = true;
-          if(statusEl) statusEl.textContent = 'Finance export saved as CSV.';
-        }
-      }catch(saveErr){
-        if(saveErr && saveErr.code === 'declined'){
-          handled = true; // viewer said no — respect that, don't also trigger a second save path
-        } else {
-          console.warn('downloads.save failed, falling back to local .xlsx build', saveErr);
-        }
-      }
-    }
-    if(!handled){
-      const blob = await buildFinanceXlsxBlob(dataRows);
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href=url; a.download=filenameBase+'.xlsx';
-      document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
-    }
+    const blob = await buildFinanceXlsxBlob(dataRows);
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href=url; a.download=filenameBase+'.xlsx';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
   }catch(e){ console.error('Finance export failed', e); alert('Export failed. See console.'); }
   finally{ btn.disabled=false; btn.textContent=original; }
 }
 const promoExportBtnEl = document.getElementById('promoExportBtn');
 if(promoExportBtnEl) promoExportBtnEl.addEventListener('click', exportPromoFinance);
 
-updatePromoReadOnlyUI();
-
-// ---------- Single/Batch P&P: numeric mirror of buildSheet()'s formulas, for the PDF fallback ----------
-// (used only when the `downloads` capability is available, i.e. the shared team link — the
-// standalone file keeps using the original XlsxPopulate-built .xlsx/.zip path below unchanged)
-function computePPFull(ctx){
-  const prod=(ctx.prod||''), qty=Number(ctx.qty||0), cash=Number(ctx.cash||0), promo=Number(ctx.promo||0),
-        landed=Number(ctx.landed||0), vat=(ctx.vat||'Y'), comm=(ctx.comm||''), channel=(ctx.channel||'Retail');
-  const r0 = (x)=> Math.round(x);
-  const rd0 = (x)=> Math.sign(x)*Math.floor(Math.abs(x)); // ROUNDDOWN(x,0) — truncate toward zero
-  const discPrice = cash - promo;
-  const vatPct = (vat==='Y') ? 0.18 : 0;
-  const vatAmt = r0(discPrice*vatPct/(1+vatPct));
-  const ssclPct = 0.0125;
-  const sscl = rd0((discPrice-vatAmt)*ssclPct);
-  const nsp = discPrice - vatAmt - sscl;
-  const landedPct = nsp ? landed/nsp : 0;
-  const otherDirect = 0, otherDirectPct = nsp ? otherDirect/nsp : 0;
-  const rebates = 0, rebatesPct = nsp ? rebates/nsp : 0;
-  const transportPct = 0.025, transport = nsp*transportPct;
-  const gm = nsp - landed - otherDirect + rebates - transport;
-  const gmPct = nsp ? gm/nsp : 0;
-  const royaltyPct=0.01, royalty=nsp*royaltyPct;
-  const sellCommPct=0.045, sellComm=nsp*sellCommPct;
-  const sellBonusPct=0, sellBonus=nsp*sellBonusPct;
-  const pftfPct=0.15, pftf=(sellComm+sellBonus)*pftfPct;
-  const prodBonusPct=0, prodBonus=nsp*prodBonusPct;
-  const warrantyPct=0.006, warranty=nsp*warrantyPct;
-  const ccCommPct=0.0075, ccComm=nsp*ccCommPct;
-  const varCostsSum = royalty+sellComm+sellBonus+pftf+prodBonus+warranty+ccComm;
-  const varCostsPct = nsp ? varCostsSum/nsp : 0;
-  const varMargin = gm - varCostsSum;
-  const varMarginPct = nsp ? varMargin/nsp : 0;
-  const semiVarPct=0.06, semiVar=nsp*semiVarPct;
-  const periodExpPct=0.125, periodExp=nsp*periodExpPct;
-  const contribBeforeIntTax = gm - varCostsSum - semiVar - periodExp;
-  const interestPct=0.035, interest=landed*interestPct;
-  const contribBeforeTax = contribBeforeIntTax - interest;
-  const taxPct=0.32, tax = contribBeforeTax<0 ? 0 : contribBeforeTax*taxPct;
-  const netContribAfterTax = contribBeforeTax - tax;
-  return {prod,qty,cash,promo,landed,vat,comm,channel,discPrice,vatPct,vatAmt,ssclPct,sscl,nsp,
-    landedPct,otherDirect,otherDirectPct,rebates,rebatesPct,transportPct,transport,gm,gmPct,
-    royaltyPct,royalty,sellCommPct,sellComm,sellBonusPct,sellBonus,pftfPct,pftf,prodBonusPct,prodBonus,
-    warrantyPct,warranty,ccCommPct,ccComm,varCostsSum,varCostsPct,varMargin,varMarginPct,
-    semiVarPct,semiVar,periodExpPct,periodExp,contribBeforeIntTax,interestPct,interest,
-    contribBeforeTax,taxPct,tax,netContribAfterTax};
-}
-function ppPdfRows(c){
-  const rs = (v)=> Math.round(v).toLocaleString();
-  const pc = (v)=> (Math.round(v*1000)/10).toFixed(1)+'%';
-  return [
-    {label:'VAT APPLICABILITY (IF APPLICABLE "Y" ELSE "N")', rs:c.vat},
-    {label:'PRODUCT CATEGORY FOR COMMISSION CALCULATION (M-Sewing Machines, S-Solar, blank-Others)', rs:c.comm||'—'},
-    {label:'PRODUCT CODE', rs:c.prod||'—'},
-    {label:'QTY (info)', rs:rs(c.qty)},
-    {label:'', rs:'Rs.', pct:'%', header:true},
-    {label:'CASH PRICE / SPECIAL PRICE', rs:rs(c.cash)},
-    {label:'PROMO DISCOUNT / FINAL SLAB DISCOUNT', rs:rs(c.promo)},
-    {label:'DISCOUNTED PRICE', rs:rs(c.discPrice)},
-    {label:'SALES TAXES', section:true},
-    {label:'Vat', rs:rs(c.vatAmt), pct:pc(c.vatPct)},
-    {label:'SSCL', rs:rs(c.sscl), pct:pc(c.ssclPct)},
-    {label:'NET SELLING PRICE', rs:rs(c.nsp), pct:pc(1), bold:true},
-    {label:'LANDED COST/FACTORY TP/LOCAL BUY PRICE (WITHOUT VAT)', rs:rs(c.landed), pct:pc(c.landedPct)},
-    {label:'OTHER DIRECT COSTS (eg. AC Installation cost, helmet, Jacket)', rs:rs(c.otherDirect), pct:pc(c.otherDirectPct)},
-    {label:'REBATES (per unit, plus value)', rs:rs(c.rebates), pct:pc(c.rebatesPct)},
-    {label:'TRANSPORT COST (FURNITURE 4%, COMPUTER .75%, OTHER 2.5%)', rs:rs(c.transport), pct:pc(c.transportPct)},
-    {label:'GROSS MARGIN', rs:rs(c.gm), pct:pc(c.gmPct), bold:true},
-    {label:'VARIABLE COSTS', section:true},
-    {label:'Royalty', rs:rs(c.royalty), pct:pc(c.royaltyPct)},
-    {label:'Selling Commission', rs:rs(c.sellComm), pct:pc(c.sellCommPct)},
-    {label:'Selling Bonus', rs:rs(c.sellBonus), pct:pc(c.sellBonusPct)},
-    {label:'PF & TF', rs:rs(c.pftf), pct:pc(c.pftfPct)},
-    {label:'Product Bonus', rs:rs(c.prodBonus), pct:pc(c.prodBonusPct)},
-    {label:'Warranty', rs:rs(c.warranty), pct:pc(c.warrantyPct)},
-    {label:'CC Commission', rs:rs(c.ccComm), pct:pc(c.ccCommPct)},
-    {label:'Total Variable Costs', rs:rs(c.varCostsSum), pct:pc(c.varCostsPct)},
-    {label:'VARIABLE MARGIN', rs:rs(c.varMargin), pct:pc(c.varMarginPct), bold:true},
-    {label:'ALLOCATION OF SEMI AND FIXED COSTS', section:true},
-    {label:'SEMI VARIABLE S&A', rs:rs(c.semiVar), pct:pc(c.semiVarPct)},
-    {label:'PERIOD EXPENSES', rs:rs(c.periodExp), pct:pc(c.periodExpPct)},
-    {label:'CONTRIBUTION BEFORE INT. AND TAX', rs:rs(c.contribBeforeIntTax)},
-    {label:'INTEREST', rs:rs(c.interest), pct:pc(c.interestPct)},
-    {label:'CONTRIBUTION BEFORE TAX', rs:rs(c.contribBeforeTax)},
-    {label:'TAX', rs:rs(c.tax), pct:pc(c.taxPct)},
-    {label:'NET CONTRIBUTION AFTER TAX', rs:rs(c.netContribAfterTax), bold:true}
-  ];
-}
-// CSV is the closest real equivalent to "an Excel file" the `downloads` capability can hand a
-// viewer: .xlsx and .zip are simply not in its allowlist (confirmed against the platform's own
-// type definitions — csv/docx/pptx/epub/ttf/html/svg/pdf plus a base image/text set, nothing
-// else), so there is no way to make a real .xlsx or .zip download work from the shared link.
-// CSV opens directly in Excel with every number intact — it just has no fill colors/borders/
-// live formulas, unlike the standalone file's XlsxPopulate-built .xlsx (which is unaffected).
-function ppCsvEscape(v){
-  if(v==null) return '';
-  const s = String(v);
-  return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s;
-}
-function buildPPCsv(ctxList){
-  const lines = [];
-  ctxList.forEach((ctx, idx)=>{
-    const c = computePPFull(ctx);
-    if(idx>0) lines.push('','');
-    lines.push(ppCsvEscape('PRICE & PROFITABILITY CALCULATION (P&P) — '+(c.prod||'export')+' — '+c.channel));
-    ppPdfRows(c).forEach(row=>{
-      if(row.section){ lines.push(ppCsvEscape(row.label)); return; }
-      lines.push([ppCsvEscape(row.label), row.rs!=null?ppCsvEscape(row.rs):'', row.pct!=null?ppCsvEscape(row.pct):''].join(','));
-    });
-  });
-  return lines.join('\r\n');
-}
-async function tryDownloadsCapability(){
-  if(!(window.claude && typeof window.claude.use === 'function')) return null;
-  try{ return await window.claude.use('downloads'); }catch(e){ return null; }
-}
+// ---------- Master Data: publish the current cost list to GitHub for the team ----------
+const ghPublishCostBtnEl = document.getElementById('ghPublishCostBtn');
+if(ghPublishCostBtnEl) ghPublishCostBtnEl.addEventListener('click', async ()=>{
+  const btn = ghPublishCostBtnEl;
+  const statusEl = document.getElementById('ghCostStatus');
+  const s = ghSettings();
+  if(!s || !s.owner || !s.repo || !s.token){
+    alert('Set up GitHub Sync first (Promotions Sheet tab → ⚙ GitHub Sync) — repo, branch and a token with write access are all required.');
+    return;
+  }
+  if(usingEmbedded){ alert('Upload a monthly cost file first — the built-in default dataset doesn\'t need publishing.'); return; }
+  const original = btn.textContent;
+  try{
+    btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>Publishing…';
+    const tuples = [];
+    ProductIndex.forEach(rec=> tuples.push([rec.code, rec.commodity, rec.qty, rec.landed]));
+    const label = (document.getElementById('dsLabel')||{}).textContent || 'Uploaded dataset';
+    const payload = {label, tuples, updatedAt: new Date().toISOString()};
+    const path = s.costPath || 'landed-cost.json';
+    const res = await ghApiPut(path, payload, 'Landed cost update — '+new Date().toISOString(), ghCostSha);
+    if(res.ok){
+      ghCostSha = res.sha;
+      if(statusEl) statusEl.textContent = 'Published ✓ ('+new Date().toLocaleTimeString()+') — your team will get this next time they load the page.';
+    } else if(res.reason === 'conflict'){
+      if(statusEl) statusEl.textContent = 'Someone else published a cost list moments ago — click again to overwrite with yours.';
+      const fresh = await ghLoadFile(path);
+      if(fresh.ok) ghCostSha = fresh.sha; // pick up the latest sha so a second click succeeds
+    } else if(res.reason === 'auth'){
+      alert('GitHub rejected the token (invalid, expired, or missing write access). Check ⚙ GitHub Sync.');
+    } else {
+      alert('Publish failed ('+(res.reason||'unknown')+'). See browser console.');
+      console.error('GitHub cost publish failed', res);
+    }
+  } finally {
+    btn.disabled = false; btn.textContent = original;
+  }
+});
 
 </script>
 </body>
