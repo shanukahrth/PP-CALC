@@ -13,7 +13,7 @@
           "mrp": 59999,
           "exDisc": 16000,
           "sugMrp": 59999,
-          "sugDisc": 14000,
+          "sugDisc": 15000,
           "remarks": "",
           "wPrice": 39599.1,
           "freeIssue": "",
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-10-02T05:37:30.305Z"
+  "updatedAt": "2026-10-02T06:13:44.064Z"
 }
