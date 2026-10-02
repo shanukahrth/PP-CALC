@@ -687,7 +687,7 @@
           "code": "TCL75C6K",
           "size": 75,
           "soh": null,
-          "costOverride": 292777.1728,
+          "costOverride": 277666.3839,
           "mrp": 539999,
           "exDisc": 20000,
           "sugMrp": 539999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-29T09:46:10.561Z"
+  "updatedAt": "2026-10-02T05:37:30.305Z"
 }
