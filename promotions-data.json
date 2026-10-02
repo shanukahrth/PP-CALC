@@ -417,7 +417,7 @@
           "code": "TCL55C655",
           "size": 55,
           "soh": 71,
-          "costOverride": 96805.8919,
+          "costOverride": 96810.539,
           "mrp": 239999,
           "exDisc": 60000,
           "sugMrp": 239999,
@@ -435,7 +435,7 @@
           "code": "TCL65C655",
           "size": 65,
           "soh": 82,
-          "costOverride": 148124.4131,
+          "costOverride": 147923.5011,
           "mrp": 329999,
           "exDisc": 70000,
           "sugMrp": 329999,
@@ -453,7 +453,7 @@
           "code": "TCL75C655",
           "size": 75,
           "soh": 129,
-          "costOverride": 209692.8359,
+          "costOverride": 205840.4684,
           "mrp": 479999,
           "exDisc": 80000,
           "sugMrp": 479999,
@@ -471,7 +471,7 @@
           "code": "TCL85C655",
           "size": 85,
           "soh": 89,
-          "costOverride": 342353.0987,
+          "costOverride": 341933.002,
           "mrp": 699999,
           "exDisc": 80000,
           "sugMrp": 699999,
@@ -489,7 +489,7 @@
           "code": "TCL43S5400",
           "size": 43,
           "soh": null,
-          "costOverride": 58330.6349,
+          "costOverride": 58168.2709,
           "mrp": 124999,
           "exDisc": 25000,
           "sugMrp": 124999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-10-02T06:26:36.694Z"
+  "updatedAt": "2026-10-02T06:26:48.279Z"
 }
