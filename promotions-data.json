@@ -1005,7 +1005,7 @@
           "code": "SMGUA55U8000H",
           "size": null,
           "soh": 752,
-          "costOverride": 197408.2212,
+          "costOverride": 197414.2467342995,
           "mrp": 354999,
           "exDisc": 30000,
           "sugMrp": 354999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:43:11.781Z"
+  "updatedAt": "2026-11-03T10:43:16.909Z"
 }
