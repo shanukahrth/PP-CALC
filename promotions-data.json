@@ -1101,7 +1101,7 @@
           "code": "HT-S100F",
           "size": null,
           "soh": null,
-          "costOverride": 30949.3906,
+          "costOverride": 31100.22580877467,
           "mrp": 74999,
           "exDisc": 20000,
           "sugMrp": 74999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:43:16.909Z"
+  "updatedAt": "2026-11-03T10:44:56.042Z"
 }
