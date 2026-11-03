@@ -1449,7 +1449,7 @@
           "code": "SIN-PR-K340",
           "size": null,
           "soh": null,
-          "costOverride": 18289.1018,
+          "costOverride": 18276.454165675506,
           "mrp": 40490,
           "exDisc": 9590,
           "sugMrp": 40490,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:45:20.486Z"
+  "updatedAt": "2026-11-03T10:45:23.420Z"
 }
