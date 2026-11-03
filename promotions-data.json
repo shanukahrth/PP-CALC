@@ -669,7 +669,7 @@
           "code": "TCL85C6K",
           "size": 85,
           "soh": null,
-          "costOverride": 382703.4569,
+          "costOverride": 372055.83871488954,
           "mrp": 649999,
           "exDisc": 20000,
           "sugMrp": 679999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:42:48.614Z"
+  "updatedAt": "2026-11-03T10:42:57.146Z"
 }
