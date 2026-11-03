@@ -2385,7 +2385,7 @@
           "code": "PN-TN-43S55CGQ",
           "size": null,
           "soh": null,
-          "costOverride": 80552,
+          "costOverride": 80599.46579395895,
           "mrp": 159999,
           "exDisc": 20000,
           "sugMrp": 159999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:46:09.277Z"
+  "updatedAt": "2026-11-03T10:46:13.631Z"
 }
