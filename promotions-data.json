@@ -1473,7 +1473,7 @@
           "code": "HFPA-GRAVITY-BLC",
           "size": null,
           "soh": null,
-          "costOverride": 15297.5972,
+          "costOverride": null,
           "mrp": 26990,
           "exDisc": 2000,
           "sugMrp": 26990,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:45:23.420Z"
+  "updatedAt": "2026-11-03T10:45:26.792Z"
 }
