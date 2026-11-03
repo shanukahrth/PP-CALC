@@ -1395,7 +1395,7 @@
           "code": "SIN-BTS-69",
           "size": null,
           "soh": null,
-          "costOverride": 20773.2196,
+          "costOverride": 20879.132093367236,
           "mrp": 44999,
           "exDisc": 7000,
           "sugMrp": 44999,
@@ -1413,7 +1413,7 @@
           "code": "SIN-PSY618",
           "size": null,
           "soh": null,
-          "costOverride": 30240.7131,
+          "costOverride": 30120.768146051447,
           "mrp": 59999,
           "exDisc": 10000,
           "sugMrp": 59999,
@@ -1431,7 +1431,7 @@
           "code": "HT-B600",
           "size": null,
           "soh": null,
-          "costOverride": 139187.5538,
+          "costOverride": 138755.69227936555,
           "mrp": 209999,
           "exDisc": 15000,
           "sugMrp": 219999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:45:11.174Z"
+  "updatedAt": "2026-11-03T10:45:20.486Z"
 }
