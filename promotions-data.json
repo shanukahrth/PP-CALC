@@ -1263,7 +1263,7 @@
           "code": "SRS-NB10",
           "size": null,
           "soh": null,
-          "costOverride": 42264.992,
+          "costOverride": null,
           "mrp": 84999,
           "exDisc": 20000,
           "sugMrp": 84999,
@@ -1281,7 +1281,7 @@
           "code": "HT-B500",
           "size": null,
           "soh": 14,
-          "costOverride": 91057.6035,
+          "costOverride": null,
           "mrp": 179999,
           "exDisc": 15000,
           "sugMrp": 179999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:45:02.813Z"
+  "updatedAt": "2026-11-03T10:45:11.174Z"
 }
