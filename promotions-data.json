@@ -2367,7 +2367,7 @@
           "code": "PN-TS-32N30CGQ",
           "size": null,
           "soh": null,
-          "costOverride": 27461,
+          "costOverride": 27609.258467328982,
           "mrp": 64999,
           "exDisc": 10000,
           "sugMrp": 64999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:45:59.922Z"
+  "updatedAt": "2026-11-03T10:46:09.277Z"
 }
