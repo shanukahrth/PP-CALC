@@ -951,7 +951,7 @@
           "code": "SMGUA32H5000",
           "size": null,
           "soh": null,
-          "costOverride": 53867.2691,
+          "costOverride": 51786.92144098919,
           "mrp": 74999,
           "exDisc": 10000,
           "sugMrp": 74999,
@@ -969,7 +969,7 @@
           "code": "SMGUA43F6000",
           "size": null,
           "soh": null,
-          "costOverride": 89059.0702,
+          "costOverride": 88818.05162128572,
           "mrp": 149999,
           "exDisc": 20000,
           "sugMrp": 149999,
@@ -2401,5 +2401,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-03T10:42:57.146Z"
+  "updatedAt": "2026-11-03T10:43:11.781Z"
 }
